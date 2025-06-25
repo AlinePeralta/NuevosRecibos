@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recibo de Pago</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .header {
+            background-color: #0C0C21;
+        }
+
+        .total {
+            color: #36b57f;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #C8EFDE;
+            color: #36b57f;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .footer {
+            background: #0C0C21;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .badgeCorrecto {
+            display: inline-block;
+            padding: .3em .7em;
+            font-size: 12px;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 4rem;
+            color: #36b57f;
+            background-color: #C8EFDE;
+
+        }
+        .destacadoCorrecto{
+             color: #36b57f;
+            background-color: #C8EFDE;
+            height: 10px;
+            font-size: 12px;
+        }
+
+        .p-md{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        p-sm{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+
+
+        @media only screen and (max-width: 620px) {
+            .container {
+                width: 90% !important;
+            }
+
+            .total {
+                font-size: 24px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--Portada, logo, Nombre y fecha-->
+    <table class="container" cellpadding="0" cellspacing="0" align="center">
+        <!-- Portada -->
+        <tr class="header">
+            <td colspan="3">
+                <img src="/portadaDelta@4x-100.jpg"
+                    alt="Portada">
+            </td>
+        </tr>
+
+  
+<tr>
+  <td align="left" style="padding: 20px 40px;">
+
+ 
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tr>
+       
+        <td style=" border-radius: 50%; width: 60px; height: 60px; text-align: center; vertical-align: middle;">
+          <img src="fotoPerfil@4x-100.jpg" alt="Logo" width="60" height="60" style="display: block; border-radius: 50%; margin: auto;">
+        </td>
+
+       
+        <td style="width: 15px;"></td>
+
+     
+        <td style="vertical-align: middle;">
+          <h1 style="margin: 0; font-size: 16px; color: #0C0C21; line-height: 1.4; font-weight: bold;">
+            DELTA DESARROLLO<br>GRÁFICO
+          </h1>
+        </td>
+      </tr>
+    </table>
+
+  </td>
+</tr>
+
+
+        <!-- Fecha -->
+        <tr>
+            <td colspan="3" align="right" style="padding: 0 20px;">
+                <p style="font-size: 12px; color: #888;">25 septiembre de 2025 &nbsp; 14:52:59</p>
+            </td>
+        </tr>
+
+
+    </table>
+
+    <!--Badge, total-->
+    <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
+       
+        <tr>
+
+            <td align="left" style="padding: 10px;" width="0%">
+                <span class="badgeCorrecto" style="margin-right: 5px;">Aprobada</span>
+                <span class="badgeCorrecto" style="margin-right: 5px;">3 MSI</span>
+
+            </td>
+
+
+            <td align="right" style="padding: 10px;">
+                <span style="font-weight: bold; font-size: 16px; color: #000;">Total</span>
+                <span style="font-weight: bold; font-size: 22px; color: #36b57f; margin-left: 8px;">$12,650.00</span>
+            </td>
+        </tr>
+
+    </table>
+
+    <!--Destacado-->
+    <table class="container p-md" cellpadding="0" cellspacing="0" align="center" >
+        <tr align="center" class="destacadoCorrecto">
+            <td>
+                <p>Venta a 3 Meses Sin Intereses de  $4,217.00</p>
+            </td>
+        </tr>
+    </table>
+
+<!-- Separadaor-->
+<table width="100%" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; table-layout: fixed;" class="container">
+  <tr>
+
+
+    <td style="border-top: 1px dotted #999; line-height: 1px; height: 1px;">&nbsp;</td>
+
+
+  </tr>
+</table>
+
+
+    <table  class="container" cellpadding="0" cellspacing="0" align="center">
+   
+    <tr>
+        <td colspan="3" style="padding: 20px;">
+            <h3 style="margin: 0 0 10px; font-size: 12px; text-align: center; font-weight: 800;">DETALLE DE LA COMPRA</h3>
+            <table width="100%" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td>01</td>
+                    <td>Concepto</td>
+                    <td align="right">$5,000.00</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td>10</td>
+                    <td>Concepto 2</td>
+                    <td align="right">$4,500.00</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right">IVA 16%</td>
+                    <td align="right">$1,586.00</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right">Propina 10%</td>
+                    <td align="right">$1,150.00</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+ 
+    <!-- <tr>
+        <td colspan="3" align="center" style="padding: 20px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" width="60" alt="VISA">
+            <p style="margin: 5px 0;">CRÉDITO **** 1235</p>
+            <p style="margin: 0;">ARIEL MILLÁN</p>
+            <p style="margin: 10px 0; font-size: 12px; color: #888;">AUTORIZADO MEDIANTE CONTACTLESS</p>
+        </td>
+    </tr>
+ -->
+
+    <!-- <tr>
+        <td class="footer" colspan="3">
+            PROCESADO POR Feenicia
+        </td>
+    </tr> -->
+
+    
+        <td colspan="3" style="padding: 20px; font-size: 12px; color: #666;">
+            <p>NÚMERO: 17519318<br>
+                AFILIACIÓN EN: 27159972<br>
+                NO. TRANSACCIÓN: 27159972<br>
+                NO. AUTORIZACIÓN: 444040<br>
+                AID: A0000000031010<br>
+                NO. DE ORDEN: 27087912</p>
+            <p style="font-size: 11px; color: #999;">Por favor conserve este comprobante para cualquier aclaración.
+                Su pago ha sido procesado de forma segura.</p>
+        </td>
+    </tr>
+    </table>
+
+
+</body>
+
+</html>

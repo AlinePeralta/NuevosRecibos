@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recibo de Pago</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background: {{bodyBg}};
+           font-family: "Public Sans", sans-serif;
+        }
+
+        table {
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .containerRecibo {
+            max-width: 600px;
+            margin: 0 auto;
+            background: {{blanco}};
+            margin-top: 1rem;
+            border-radius: 10px 10px 0 0;
+
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: {{blanco}};
+
+        }
+
+        .containerFooter {
+            max-width: 600px;
+            margin: 0 auto;
+            background: {{bgLoading}};
+            padding: 20px;
+            border-radius: 0 0 10px 10px;
+            font-size: 12px;
+            color: {{textos}};
+              padding: 2rem 4rem 2rem 4rem;
+        }
+        .containerTerminos {
+            max-width: 600px;
+            margin: 0 auto;
+         padding: 1rem 4rem 4rem 4rem;
+            padding: 20px;
+            font-size: 12px;
+            color: {{textos}};
+        }
+
+
+        .header {
+            background-color: {{bgLoading}};
+            margin-top: 2rem;
+            border-radius: 10px 10px 0 0;
+        }
+
+
+
+        .button {
+            display: inline-block;
+            padding: 6px 12px;
+            background: {{correctoBg}};
+            color: {{correcto}};
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .p-md {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .p-sm {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .pt-md {
+            padding-top: 2rem;
+        }
+
+        .mt-md {
+            margin-top: 1rem;
+        }
+
+        .mb-md {
+            margin-bottom: 1rem;
+        }
+
+        .negocio {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+            overflow: hidden;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .col {
+            width: 20px;
+        }
+
+        .colMd {
+            width: 40px;
+            height: 20px;
+        }
+
+        .nombreNegocio {
+            font-size: 18px;
+            color: {{textos}};
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .fechaRecibo {
+            padding: 10px;
+            font-size: 12px;
+            text-align: right;
+            margin: 0;
+            color: {{neutral}};
+        }
+
+        .badgeContainer {
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .badgeCorrecto {
+            display: inline-block;
+            padding: .3em .7em;
+            font-size: 12px;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 4rem;
+            color: {{correcto}};
+            background-color: {{correctoBg}};
+            margin-right: 5px
+        }
+
+        .destacadoCorrecto {
+            color: {{correcto}};
+            background-color: {{correctoBg}};
+            height: 10px;
+            font-size: 12px;
+        }
+
+        .total {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            color: {{textos}};
+        }
+
+        .monto {
+            font-size: 32px;
+            font-weight: bold;
+            padding: 10px;
+            color: {{correcto}};
+        }
+
+        .textDestacado {
+            font-size: 14px;
+            margin: 0;
+            padding: 10px;
+            font-weight: 500;
+        }
+
+        .separador {
+            border-top: 1px dotted {{neutral}};
+            line-height: 1px;
+            height: 1px;
+        }
+
+        .detalleCompra {
+            padding: 36px;
+            font-size: 14px;
+            color: {{textos}};
+        }
+
+        .detalleTitulo {
+            font-size: 14px;
+            color: {{textos}};
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 0.25em;
+        }
+
+        .detalleTabla {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .detalleTablaItem {
+            border-bottom: 1px solid {{skeletonLoad}};
+            padding: 20px;
+        }
+
+        .itemTotales {
+            font-weight: bold;
+        }
+
+        .banners {
+            padding: 4rem;
+        }
+
+        .bannerSeparador {
+            padding: 0 1rem;
+        }
+
+        .bannerItem {
+            background-color: {{bannerItem}};
+            border-radius: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .bannerItemContent {
+            padding: 10px;
+        }
+
+        .bannerImg {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        .tarjeta {
+            font-size: 14px;
+            color: {{textos}};
+            font-weight: bold;
+
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .titular {
+            font-size: 12px;
+            color: {{neutral}};
+            padding-top: 4px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .compraText {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .text {
+            margin: 0;
+            font-size: 12px;
+            color: {{textos}};
+            line-height: 1.6;
+            font-weight: 100;
+        }
+
+        .procesadorFondo {
+            background-image: {{fondoProcesador}};
+            background-color: {{marca}};
+            border-radius: 0 0 10px 10px;
+            letter-spacing: 0.25em;
+        }
+
+        .textProcesador {
+            margin: 0;
+            font-size: 12px;
+            color: {{blanco}};
+            line-height: 1.6;
+            font-weight: 100;
+            text-transform: uppercase;
+        }
+
+        .logoProcesador {
+            padding-right: 1rem;
+        }
+
+        .textTerminos {
+            font-size: 10px;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        @media only screen and (max-width: 620px) {
+            .container {
+                width: 90% !important;
+            }
+
+            .total {
+                font-size: 24px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table class="containerRecibo" cellpadding="0" cellspacing="0" align="center">
+        <!--Logo de la empresa y encabezado del recibo-->
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr class="header">
+                <td colspan="3">
+                    <img src="{{portada}}" alt="Portada">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="left" class="negocio">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td class="logo">
+                                <img src="{{logoAvatar}}" alt="Logo" >
+                            </td>
+                            <td class="col"></td>
+                            <td>
+                                <h4 class="nombreNegocio">DELTA DESARROLLO<br>GRÁFICO</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" align="right" class="fechaRecibo">
+                    <p>25 septiembre de 2025 &nbsp; 14:52:59</p>
+                </td>
+            </tr>
+
+        </table>
+        <!--Badge-->
+        <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td align="left" class="badgeContainer">
+                    <span class="badgeCorrecto">Aprobada</span>
+                    <span class="badgeCorrecto">3 MSI</span>
+                </td>
+                <td align="right">
+                    <span class="total">Total</span>
+                    <span class="monto">$12,650.00</span>
+                </td>
+            </tr>
+        </table>
+        <!--Destacado-->
+        <table class="container p-md" cellpadding="0" cellspacing="0" align="center">
+            <tr align="center" class="destacadoCorrecto">
+                <td>
+                    <p class="textDestacado">Venta a 3 Meses Sin Intereses de $4,217.00</p>
+                </td>
+            </tr>
+        </table>
+
+        <!--Separador-->
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tbody>
+                <tr>
+                    <td class="separador">&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        <!--Contenido Recibo-->
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td colspan="3" class="detalleCompra">
+                    <h3 class="detalleTitulo">DETALLE DE LA COMPRA</h3>
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
+                        <tr class="item">
+                            <td>01</td>
+                            <td>Concepto</td>
+                            <td align="right">$ 5,000.00</td>
+                        </tr>
+                        <tr class="item">
+                            <td>10</td>
+                            <td>Concepto 2</td>
+                            <td align="right">$ 6,500.00</td>
+                        </tr>
+                        <tr class="detalleTablaItem">
+                            <td class="colMd"></td>
+                        </tr>
+
+                    </table>
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
+                        <tr class="itemTotales ">
+                            <td colspan="2" align="right">IVA 16%</td>
+                            <td align="right">$ 1,586.00</td>
+                        </tr>
+                        <tr class="itemTotales ">
+                            <td colspan="2" align="right">Propina 10%</td>
+                            <td align="right">$ 1,150.00</td>
+                        </tr>
+
+                    </table>
+
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
+                        <tr>
+                            <td class="col"></td>
+                        </tr>
+                        <tr class="detalleTablaItem"> </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!--Banners de pago-->
+        <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
+            <tr class="banners">
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="49%" valign="top" class="bannerSeparador">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bannerItem">
+                                    <tr>
+                                        <td class="bannerItemContent">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="56" valign="middle">
+                                                        <table border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td align="center" class="bannerImg">
+                                                                    <img src="{{visa}}" width="60"
+                                                                        alt="Tarjeta">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="15"></td>
+                                                    <td valign="middle">
+                                                        <p class="tarjeta">CRÉDITO **** 1235</p>
+                                                        <p class="titular">ARIEL MILLÁN</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="49%" valign="top" class="bannerSeparador">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bannerItem">
+                                    <tr>
+                                        <td class="bannerItemContent">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="56" valign="middle">
+                                                        <table border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td align="center" class="bannerImg">
+                                                                    <img src="{{contactless}}" width="60"
+                                                                        alt="Metodo de autorización">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="15"></td>
+                                                    <td valign="middle">
+                                                        <p class="tarjeta">AUTORIZADO MEDIANTE</p>
+                                                        <p class="titular">CONTACTLESS</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!--Compra Procesada-->
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td colspan="3" class="compraText">
+                    <h5 class="text">Tu compra ha sido procesada de forma segura. <br>
+                        Por favor conserva este comprobante para cualquier aclaración.</h5>
+
+                </td>
+            </tr>
+        </table>
+
+        <!--Procesado por-->
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr class="banners">
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="49%" valign="top" class="">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="procesadorFondo">
+                                    <tr>
+                                        <td class="bannerItemContent">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+
+                                                    <td width="15"></td>
+                                                    <td valign="middle">
+                                                        <p class="textProcesador ">procesado por</p>
+                                                    </td>
+                                                    <td valign="middle" align="right">
+                                                        <img src="{{logoInv}}" alt="Logo procesador" class="logoProcesador">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </table>
+    <!-- Datos de la transacción -->
+    <table class="containerFooter" cellpadding="0" cellspacing="0" align="center">
+
+        <tr>
+            <td align="left" valign="top">
+                <table cellpadding="5" cellspacing="0" align="left">
+                    <tr>
+                        <td>NO. RECIBO:</td>
+                        <td align="right">175705118</td>
+                    </tr>
+                    <tr>
+                        <td>AFILIACIÓN ID:</td>
+                        <td align="right">9577752</td>
+                    </tr>
+                    <tr>
+                        <td>ID. TRANSACCIÓN:</td>
+                        <td align="right">217550994</td>
+                    </tr>
+                    <tr>
+                        <td>NO. AUTORIZACIÓN:</td>
+                        <td align="right">469410</td>
+                    </tr>
+                    <tr>
+                        <td>ARQC:</td>
+                        <td align="right">**********BFCC</td>
+                    </tr>
+                    <tr>
+                        <td>AID:</td>
+                        <td align="right">A0000000031010</td>
+                    </tr>
+                    <tr>
+                        <td>NO. DE ORDEN:</td>
+                        <td align="right">212691582</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+
+    </table>
+    <!--Separador-->
+    <table class="container" cellpadding="0" cellspacing="0" align="center">
+        <tbody>
+            <tr>
+                <td class="separador">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--Compra Procesada-->
+    <table class="containerTerminos" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+            <td>
+                <p class="textTerminos">Por este pagaré prometo y me obligo incondicionalmente a pagar a la orden de la
+                    institución emisora de la tarjeta relacionada, en sus oficinas, la cantidad que aparece en el total
+                    de éste título el cual suscribo al amparo del contrato que tengo celebrado con dicha institución
+                    para el uso de esta Tarjeta.Reconozco y acepto que el presente es comprobante de la operación
+                    señalada, el cual tiene pleno valor probatorio y fuerza legal en virtud de que firmé y/o digité mi
+                    firma electrónica, la cual es de mi exclusiva responsabilidad por lo que manifiesto plena
+                    conformidad respecto al cargo efectuado a la cuenta de la que se deriva esta Tarjeta.
+                    El presente pagaré es negociable únicamente con instituciones bancarias, a excepción de que éste sea
+                    suscrito por tarjetahabientes de American Express.
+                    Es importante conservar el voucher ante cualquier solicitud de aclaración.
+                    NO NEGOCIABLE</p>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
