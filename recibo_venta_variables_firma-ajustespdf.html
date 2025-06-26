@@ -22,7 +22,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: {{bodyBg}};
+            background:  [[${bodyBg}]];
           font-family: 'Public Sans', sans-serif; 
         }
 
@@ -34,7 +34,7 @@
         .containerRecibo {
             max-width: 600px;
             margin: 0 auto;
-            background: {{blanco}};
+            background: [[${bgLoading}]];
             margin-top: 1rem;
             border-radius: 10px 10px 0 0;
         }
@@ -42,30 +42,31 @@
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: {{blanco}};
+            background: [[${blanco}]];
         }
 
         .containerFooter {
             max-width: 600px;
             margin: 0 auto;
-            background: {{bgLoading}};
+            background: [[${bgLoading}]];
             padding: 20px;
             border-radius: 0 0 10px 10px;
             font-size: 12px;
-            color: {{textos}};
+            color: [[${textos}]];;
               padding: 2rem 4rem 2rem 4rem;
         }
         .containerTerminos {
+              background: [[${bgLoading}]];
             max-width: 600px;
             margin: 0 auto;
          padding: 1rem 4rem 4rem 4rem;
             padding: 20px;
             font-size: 12px;
-            color: {{textos}};
+            color: [[${textos}]];
         }
 
         .header {
-            background-color: {{bgLoading}};
+            background-color: [[${bgLoading}]];
             margin-top: 2rem;
             border-radius: 10px 10px 0 0;
         }
@@ -80,8 +81,8 @@
         .button {
             display: inline-block;
             padding: 6px 12px;
-            background: {{correctoBg}};
-            color: {{correcto}};
+            background: [[${correctoBg}]];
+            color: [[${correcto}]];
             border-radius: 4px;
             font-size: 14px;
         }
@@ -125,7 +126,7 @@
           .logo img {
              width: 60px;
   height: 60px;
-  border: 2px solid {{marca}};
+  border: 2px solid [[${marca}]];
   border-radius: 50%;
   object-fit: cover;
         }
@@ -141,7 +142,7 @@
 
         .nombreNegocio {
             font-size: 18px;
-            color: {{textos}};
+            color: [[${textos}]];
             margin: 0;
             font-weight: bold;
         }
@@ -151,7 +152,7 @@
             font-size: 12px;
             text-align: right;
             margin: 0;
-            color: {{neutral}};
+            color: [[${textos}]];
         }
 
         .badgeContainer {
@@ -167,15 +168,15 @@
             text-align: center;
             white-space: nowrap;
             vertical-align: baseline;
-          border-radius: 999px;
-            color: {{correcto}};
-            background-color: {{correctoBg}};
+            border-radius: 10px;
+            color: [[${correcto}]];
+            background-color: [[${correctoBg}]];
             margin-right: 5px
         }
 
         .destacadoCorrecto {
-            color: {{correcto}};
-            background-color: {{correctoBg}};
+            color: [[${correcto}]];
+            background-color: [[${correctoBg}]];
             height: 10px;
             font-size: 12px;
         }
@@ -184,14 +185,14 @@
             font-size: 24px;
             font-weight: bold;
             padding: 10px;
-            color: {{textos}};
+            color: [[${textos}]];
         }
 
         .monto {
             font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: {{correcto}};
+            color: [[${textos}]];
         }
 
         .textDestacado {
@@ -202,7 +203,7 @@
         }
 
         .separador {
-            border-top: 1px dotted {{neutral}};
+            border-top: 1px dotted [[${neutral}]];
             line-height: 1px;
             height: 1px;
         }
@@ -210,12 +211,12 @@
         .detalleCompra {
              padding: 8px 28px 40px 28px;
             font-size: 14px;
-            color: {{textos}};
+            color: [[${textos}]];
         }
 
         .detalleTitulo {
             font-size: 14px;
-            color: {{textos}};
+            color: [[${textos}]];
             margin-bottom: 20px;
             text-transform: uppercase;
             text-align: center;
@@ -229,7 +230,7 @@
         }
 
         .detalleTablaItem {
-            border-bottom: 1px solid {{skeletonLoad}};
+            border-bottom: 1px solid [[${skeletonLoad}]];
             padding: 20px;
         }
 
@@ -246,13 +247,14 @@
         }
 
         .bannerItem {
-            background-color: {{bannerItem}};
+            background-color: [[${bannerItem}]];
             border-radius: 10px;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         .bannerItemContent {
             padding: 10px;
+            
         }
 
         .bannerImg {
@@ -263,7 +265,7 @@
 
         .tarjeta {
             font-size: 14px;
-            color: {{textos}};
+            color: [[${textos}]];;
             font-weight: bold;
 
             margin: 0;
@@ -286,16 +288,23 @@
         .text {
             margin: 0;
             font-size: 12px;
-            color: {{textos}};
+            color: [[${textos}]];;
             line-height: 1.6;
             font-weight: 100;
         }
 
         .procesadorFondo {
-            background-image: {{fondoProcesador}};
-            background-color: {{marca}};
+            background-image:[[${fondoProcesador}]];
+            background-color: [[${marca}]];
             border-radius: 0 0 10px 10px;
             letter-spacing: 0.25em;
+        }
+
+             .fondoProcesador {
+             background-image:[[${fondoProcesador}]];
+            background-color: [[${marca}]];
+            border-radius: 0 0 10px 10px;
+         padding: 10px;
         }
 
         
@@ -303,7 +312,7 @@
         .textProcesador {
             margin: 0;
             font-size: 12px;
-            color: {{blanco}};
+            color: [[${blanco}]];
             line-height: 1.6;
             font-weight: 100;
             text-transform: uppercase;
@@ -333,20 +342,20 @@
 .semi-der {
   width: 17px;
   height: 38px;
-  background-color: {{bodyBg}};
+  background-color: [[${bodyBg}]];
   vertical-align: middle;
 }
 
   .semi-der{
   width: 17px;
   height: 38px;
-  background-color: {{bodyBg}};
+  background-color: [[${bodyBg}]];
 }
 
 .semi-izq{
   width: 17px;
   height: 38px;
-  background-color: {{bodyBg}};
+  background-color: [[${bodyBg}]];
 }
 
 .semi-izq {
@@ -461,7 +470,7 @@
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr class="header">
                 <td colspan="3">
-                    <img src="{{portada}}" alt="Portada">
+                    <img src="${portada}" alt="Portada">
                 </td>
             </tr>
 
@@ -470,7 +479,7 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td class="logo">
-                                <img src="{{logoAvatar}}" alt="Logo" >
+                                <img src="${logoAvatar}" alt="Logo" >
                             </td>
                             <td class="col"></td>
                             <td>
@@ -584,7 +593,7 @@
                                                         <table border="0" cellspacing="0" cellpadding="0">
                                                             <tr>
                                                                 <td align="center" class="bannerImg">
-                                                                    <img src="{{visa}}" width="60"
+                                                                    <img src="${visa}" width="60"
                                                                         alt="Tarjeta">
                                                                 </td>
                                                             </tr>
@@ -611,7 +620,7 @@
                                                         <table border="0" cellspacing="0" cellpadding="0">
                                                             <tr>
                                                                 <td align="center" class="bannerImg">
-                                                                    <img src="{{firma}}" width="60"
+                                                                    <img src="${firma}" width="60"
                                                                         alt="Metodo de autorización">
                                                                 </td>
                                                             </tr>
@@ -652,7 +661,7 @@
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td width="49%" valign="top" class="">
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="procesadorFondo">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="procesadorFondo" style=" background-image:[[${fondoProcesador}]]; background-color: {{marca}};">
                                     <tr>
                                         <td class="bannerItemContent">
                                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -663,7 +672,7 @@
                                                         <p class="textProcesador ">procesado por</p>
                                                     </td>
                                                     <td valign="middle" align="right">
-                                                        <img src="{{logoInv}}" alt="Logo procesador" class="logoProcesador">
+                                                        <img src="${logoInv}" alt="Logo procesador" class="logoProcesador">
                                                     </td>
                                                 </tr>
                                             </table>
