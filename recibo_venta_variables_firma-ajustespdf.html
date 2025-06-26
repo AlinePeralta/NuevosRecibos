@@ -31,22 +31,18 @@
             width: 100%;
         }
 
-       
-
         .containerRecibo {
             max-width: 600px;
             margin: 0 auto;
             background: {{blanco}};
             margin-top: 1rem;
             border-radius: 10px 10px 0 0;
-
         }
 
         .container {
             max-width: 600px;
             margin: 0 auto;
             background: {{blanco}};
-
         }
 
         .containerFooter {
@@ -68,15 +64,15 @@
             color: {{textos}};
         }
 
-
         .header {
             background-color: {{bgLoading}};
             margin-top: 2rem;
             border-radius: 10px 10px 0 0;
         }
+
         .header img {
             width: 600px;
-            height: 220px;
+            height: 165px;
             background-size: cover;
             border-radius: 10px 10px 0 0;
         }
@@ -90,30 +86,30 @@
             font-size: 14px;
         }
 
-        .p-md {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+         .p-md {
+             padding-top: 32px;
+            
         }
 
         .p-sm {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+          padding-top: 10px; 
+           padding-bottom: 12px;
         }
 
         .pt-md {
-            padding-top: 2rem;
+            padding-top: 32px;
         }
 
         .mt-md {
-            margin-top: 1rem;
+           margin-top: 16px;
         }
 
         .mb-md {
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .negocio {
-            padding: 20px;
+             padding: 20px 20px 0 20px;
             text-align: left;
         }
 
@@ -127,9 +123,11 @@
         }
 
           .logo img {
-            width: 60px;
-            height: 60px;
-              border-radius: 50%;
+             width: 60px;
+  height: 60px;
+  border: 2px solid {{marca}};
+  border-radius: 50%;
+  object-fit: cover;
         }
 
         .col {
@@ -149,7 +147,7 @@
         }
 
         .fechaRecibo {
-            padding: 10px;
+            padding: 10px 10px 0 0;
             font-size: 12px;
             text-align: right;
             margin: 0;
@@ -163,13 +161,13 @@
 
         .badgeCorrecto {
             display: inline-block;
-            padding: .3em .7em;
+            padding: 4px 10px;
             font-size: 12px;
             line-height: 1;
             text-align: center;
             white-space: nowrap;
             vertical-align: baseline;
-            border-radius: 4rem;
+          border-radius: 999px;
             color: {{correcto}};
             background-color: {{correctoBg}};
             margin-right: 5px
@@ -210,7 +208,7 @@
         }
 
         .detalleCompra {
-            padding: 36px;
+             padding: 8px 28px 40px 28px;
             font-size: 14px;
             color: {{textos}};
         }
@@ -313,13 +311,53 @@
 
         .logoProcesador {
             padding-right: 1rem;
+              width: 100px;
         }
 
+          .logoProcesador img {
+            width: 100px;
+            height: auto;
+        }
         .textTerminos {
             font-size: 10px;
             line-height: 1.4;
             text-align: justify;
         }
+  
+ .separador-interno {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.semi-izq,
+.semi-der {
+  width: 17px;
+  height: 38px;
+  background-color: {{bodyBg}};
+  vertical-align: middle;
+}
+
+  .semi-der{
+  width: 17px;
+  height: 38px;
+  background-color: {{bodyBg}};
+}
+
+.semi-izq{
+  width: 17px;
+  height: 38px;
+  background-color: {{bodyBg}};
+}
+
+.semi-izq {
+  border-top-right-radius: 38px;
+  border-bottom-right-radius: 38px;
+}
+
+.semi-der {
+  border-top-left-radius: 38px;
+  border-bottom-left-radius: 38px;
+}
 
           @media only screen and (max-width: 560px) {
             .logo img{
@@ -472,14 +510,22 @@
             </tr>
         </table>
 
-        <!--Separador-->
-        <table class="container" cellpadding="0" cellspacing="0" align="center">
-            <tbody>
-                <tr>
-                    <td class="separador">&nbsp;</td>
-                </tr>
-            </tbody>
+   <!--Separador-->
+<table class="container" cellpadding="0" cellspacing="0" align="center">
+  <tbody>
+    <tr>
+      <td >
+        <table class="separador-interno" cellpadding="0" cellspacing="0" align="center">
+          <tr>
+            <td class="semi-izq"></td>
+            <td class="separador-interno"></td>
+            <td class="semi-der"></td>
+          </tr>
         </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
         <!--Contenido Recibo-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
@@ -593,7 +639,7 @@
             <tr>
                 <td colspan="3" class="compraText">
                     <h5 class="text">Tu compra ha sido procesada de forma segura. <br>
-                        Por favor conserva este comprobante para cualquier aclaraci&oacute;acute;n.</h5>
+                        Por favor conserva este comprobante para cualquier aclaraci&oacute;n.</h5>
 
                 </td>
             </tr>

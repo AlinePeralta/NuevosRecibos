@@ -6,12 +6,25 @@
     <title>Recibo de Venta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @font-face {
+            font-family: 'Public Sans';
+            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Public Sans';
+            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            background: {{bodyBg}};
-           font-family: "Public Sans", sans-serif;
+            background: #f4f4f4;
+            font-family: 'Public Sans', sans-serif;
         }
 
         table {
@@ -19,16 +32,11 @@
             width: 100%;
         }
 
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
 
         .containerRecibo {
             max-width: 600px;
             margin: 0 auto;
-            background: {{blanco}};
+            background: #fff;
             margin-top: 1rem;
             border-radius: 10px 10px 0 0;
 
@@ -37,81 +45,95 @@
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: {{blanco}};
+            background: #fff;
 
         }
 
         .containerFooter {
             max-width: 600px;
             margin: 0 auto;
-            background: {{bgLoading}};
+            background: #f4f4f4;
             padding: 20px;
             border-radius: 0 0 10px 10px;
             font-size: 12px;
-            color: {{textos}};
-              padding: 2rem 4rem 2rem 4rem;
+            color: #0C0C21;
+            padding: 2rem 4rem 2rem 4rem;
         }
+
         .containerTerminos {
             max-width: 600px;
             margin: 0 auto;
-         padding: 1rem 4rem 4rem 4rem;
+            padding: 1rem 4rem 4rem 4rem;
             padding: 20px;
             font-size: 12px;
-            color: {{textos}};
+            color: #333;
         }
 
 
         .header {
-            background-color: {{bgLoading}};
+            background-color: #ffffffcc;
             margin-top: 2rem;
             border-radius: 10px 10px 0 0;
+
         }
 
-
+        .header img {
+            width: 600px;
+            height: 165px;
+            background-size: cover;
+            border-radius: 10px 10px 0 0;
+        }
 
         .button {
             display: inline-block;
             padding: 6px 12px;
-            background: {{correctoBg}};
-            color: {{correcto}};
+            background: #C8EFDE;
+            color: #36b57f;
             border-radius: 4px;
             font-size: 14px;
         }
 
+
         .p-md {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+            padding-top: 32px;
         }
 
         .p-sm {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-top: 10px;
+            padding-bottom: 12px;
         }
 
         .pt-md {
-            padding-top: 2rem;
+            padding-top: 32px;
         }
 
         .mt-md {
-            margin-top: 1rem;
+            margin-top: 16px;
         }
 
         .mb-md {
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .negocio {
-            padding: 20px;
+            padding: 20px 20px 0 20px;
             text-align: left;
         }
 
         .logo {
             width: 60px;
             height: auto;
-            border-radius: 50%;
             overflow: hidden;
             text-align: center;
             vertical-align: middle;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #233A87;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .col {
@@ -125,17 +147,17 @@
 
         .nombreNegocio {
             font-size: 18px;
-            color: {{textos}};
+            color: #0C0C21;
             margin: 0;
             font-weight: bold;
         }
 
         .fechaRecibo {
-            padding: 10px;
+            padding: 10px 10px 0 0;
             font-size: 12px;
             text-align: right;
             margin: 0;
-            color: {{neutral}};
+            color: #545463;
         }
 
         .badgeContainer {
@@ -145,21 +167,21 @@
 
         .badgeCorrecto {
             display: inline-block;
-            padding: .3em .7em;
+            padding: 4px 10px;
             font-size: 12px;
             line-height: 1;
             text-align: center;
             white-space: nowrap;
             vertical-align: baseline;
-            border-radius: 4rem;
-            color: {{correcto}};
-            background-color: {{correctoBg}};
+            border-radius: 999px;
+            color: #36b57f;
+            background-color: #C8EFDE;
             margin-right: 5px
         }
 
         .destacadoCorrecto {
-            color: {{correcto}};
-            background-color: {{correctoBg}};
+            color: #36b57f;
+            background-color: #C8EFDE;
             height: 10px;
             font-size: 12px;
         }
@@ -168,14 +190,14 @@
             font-size: 24px;
             font-weight: bold;
             padding: 10px;
-            color: {{textos}};
+            color: #0C0C21;
         }
 
         .monto {
             font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: {{correcto}};
+            color: #36b57f;
         }
 
         .textDestacado {
@@ -186,20 +208,20 @@
         }
 
         .separador {
-            border-top: 1px dotted {{neutral}};
+            border-top: 1px dotted #545463;
             line-height: 1px;
             height: 1px;
         }
 
         .detalleCompra {
-            padding: 36px;
+            padding: 8px 28px 40px 28px;
             font-size: 14px;
-            color: {{textos}};
+            color: #333;
         }
 
         .detalleTitulo {
             font-size: 14px;
-            color: {{textos}};
+            color: #0C0C21;
             margin-bottom: 20px;
             text-transform: uppercase;
             text-align: center;
@@ -213,7 +235,7 @@
         }
 
         .detalleTablaItem {
-            border-bottom: 1px solid {{skeletonLoad}};
+            border-bottom: 1px solid #c1c1c1;
             padding: 20px;
         }
 
@@ -230,9 +252,9 @@
         }
 
         .bannerItem {
-            background-color: {{bannerItem}};
+            background-color: #E9EBF8;
             border-radius: 10px;
-            font-family: Arial, Helvetica, sans-serif;
+
         }
 
         .bannerItemContent {
@@ -245,9 +267,15 @@
             border-radius: 8px;
         }
 
+        .bannerImg img {
+            width: 60px;
+            height: auto;
+            border-radius: 8px;
+        }
+
         .tarjeta {
             font-size: 14px;
-            color: {{textos}};
+            color: #333333;
             font-weight: bold;
 
             margin: 0;
@@ -256,7 +284,7 @@
 
         .titular {
             font-size: 12px;
-            color: {{neutral}};
+            color: #545463;
             padding-top: 4px;
             margin: 0;
             text-transform: uppercase;
@@ -270,22 +298,22 @@
         .text {
             margin: 0;
             font-size: 12px;
-            color: {{textos}};
+            color: #0C0C21;
             line-height: 1.6;
             font-weight: 100;
         }
 
         .procesadorFondo {
-            background-image: {{fondoProcesador}};
-            background-color: {{marca}};
+            background-color: #233A87;
             border-radius: 0 0 10px 10px;
             letter-spacing: 0.25em;
         }
 
+
         .textProcesador {
             margin: 0;
             font-size: 12px;
-            color: {{blanco}};
+            color: #ffffff;
             line-height: 1.6;
             font-weight: 100;
             text-transform: uppercase;
@@ -293,6 +321,12 @@
 
         .logoProcesador {
             padding-right: 1rem;
+            width: 100px;
+        }
+
+        .logoProcesador img {
+            width: 100px;
+            height: auto;
         }
 
         .textTerminos {
@@ -301,9 +335,53 @@
             text-align: justify;
         }
 
-          @media only screen and (max-width: 560px) {
-            .logo {
+        .separador-interno {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .semi-izq,
+        .semi-der {
+            width: 17px;
+            height: 38px;
+            background-color: #f4f4f4;
+            vertical-align: middle;
+        }
+
+        .semi-der  {
+  width: 17px;
+  height: 38px;
+  background-color: #f4f4f4;
+
+}
+
+        .semi-izq {
+  width: 17px;
+  height: 38px;
+  background-color: #f4f4f4;
+ 
+}
+
+        .semi-izq {
+            border-top-right-radius: 38px;
+            border-bottom-right-radius: 38px;
+        }
+
+        .semi-der {
+            border-top-left-radius: 38px;
+            border-bottom-left-radius: 38px;
+        }
+
+
+
+        @media only screen and (max-width: 560px) {
+            .logo img {
                 width: 40px;
+                height: auto;
+            }
+
+            .header img {
+                width: 100%;
                 height: auto;
             }
 
@@ -374,12 +452,12 @@
                 padding: 20px;
             }
 
-            .logoProcesador {
+            .logoProcesador img {
                 width: 100px;
                 height: auto;
             }
         }
-        
+
         @media only screen and (max-width: 620px) {
             .container {
                 width: 90% !important;
@@ -398,7 +476,8 @@
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr class="header">
                 <td colspan="3">
-                    <img src="{{portada}}" alt="Portada">
+                    <img src="https://serti-static.s3.us-east-1.amazonaws.com/Codice-Serti/img/clientes/ualabis/portada.png"
+                        alt="Portada">
                 </td>
             </tr>
 
@@ -407,11 +486,12 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td class="logo">
-                                <img src="{{logoAvatar}}" alt="Logo" >
+                                <img src="https://serti-static.s3.us-east-1.amazonaws.com/Codice-Serti/img/clientes/ualabis/avatar.png"
+                                    alt="Logo">
                             </td>
                             <td class="col"></td>
                             <td>
-                                <h4 class="nombreNegocio">DELTA DESARROLLO<br>GRÁFICO</h4>
+                                <h4 class="nombreNegocio">DELTA DESARROLLO<br>GR&Aacute;FICO</h4>
                             </td>
                         </tr>
                     </table>
@@ -447,19 +527,33 @@
             </tr>
         </table>
 
+
+
         <!--Separador-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tbody>
                 <tr>
-                    <td class="separador">&nbsp;</td>
+                    <td>
+                        <table class="separador-interno" cellpadding="0" cellspacing="0" align="center">
+                            <tr>
+                                <td class="semi-izq"></td>
+                                <td class="separador-interno"></td>
+                                <td class="semi-der"></td>
+                            </tr>
+                        </table>
+                    </td>
                 </tr>
             </tbody>
         </table>
+
+
         <!--Contenido Recibo-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
+                
                 <td colspan="3" class="detalleCompra">
                     <h3 class="detalleTitulo">DETALLE DE LA COMPRA</h3>
+                    
                     <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
                         <tr class="item">
                             <td>01</td>
@@ -513,8 +607,7 @@
                                                         <table border="0" cellspacing="0" cellpadding="0">
                                                             <tr>
                                                                 <td align="center" class="bannerImg">
-                                                                    <img src="{{visa}}" width="60"
-                                                                        alt="Tarjeta">
+                                                                    <img src="/img/visa.png" width="60" alt="Tarjeta">
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -540,8 +633,8 @@
                                                         <table border="0" cellspacing="0" cellpadding="0">
                                                             <tr>
                                                                 <td align="center" class="bannerImg">
-                                                                    <img src="{{firma}}" width="60"
-                                                                        alt="Metodo de autorización">
+                                                                    <img src="/img/contacless.png" width="60"
+                                                                        alt="Metodo de autorizacion">
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -549,7 +642,7 @@
                                                     <td width="15"></td>
                                                     <td valign="middle">
                                                         <p class="tarjeta">AUTORIZADO MEDIANTE</p>
-                                                        <p class="titular">firma</p>
+                                                        <p class="titular">CONTACTLESS</p>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -568,8 +661,7 @@
             <tr>
                 <td colspan="3" class="compraText">
                     <h5 class="text">Tu compra ha sido procesada de forma segura. <br>
-                        Por favor conserva este comprobante para cualquier aclaraci&oacute;acute;n.</h5>
-
+                        Por favor conserva este comprobante para cualquier aclaraci&oacute;n.</h5>
                 </td>
             </tr>
         </table>
@@ -592,7 +684,8 @@
                                                         <p class="textProcesador ">procesado por</p>
                                                     </td>
                                                     <td valign="middle" align="right">
-                                                        <img src="{{logoInv}}" alt="Logo procesador" class="logoProcesador">
+                                                        <img src="https://serti-static.s3.us-east-1.amazonaws.com/Codice-Serti/img/clientes/ualabis/logoblanco.png"
+                                                            alt="" class="logoProcesador" width="100">
                                                     </td>
                                                 </tr>
                                             </table>
@@ -607,7 +700,7 @@
             </tr>
         </table>
     </table>
-    <!-- Datos de la transacción -->
+    <!-- Datos de la transacci&Oacute;n -->
     <table class="containerFooter" cellpadding="0" cellspacing="0" align="center">
 
         <tr>
@@ -660,14 +753,20 @@
     <table class="containerTerminos" cellpadding="0" cellspacing="0" align="center">
         <tr>
             <td>
-                <p class="textTerminos">Por este pagar&eacute; prometo y me obligo incondicionalmente a pagar a la orden de la
-                    instituci&oacute;n emisora de la tarjeta relacionada, en sus oficinas, la cantidad que aparece en el total
-                    de &eacute;ste t&iacute;tulo el cual suscribo al amparo del contrato que tengo celebrado con dicha instituci&oacute;n
-                    para el uso de esta Tarjeta. Reconozco y acepto que el presente es comprobante de la operaci&oacute;n
-                    señalada, el cual tiene pleno valor probatorio y fuerza legal en virtud de que firm&eacute; y/o digit&eacute; mi
+                <p class="textTerminos">Por este pagar&eacute; prometo y me obligo incondicionalmente a pagar a la orden
+                    de la
+                    instituci&oacute;n emisora de la tarjeta relacionada, en sus oficinas, la cantidad que aparece en el
+                    total
+                    de &eacute;ste t&iacute;tulo el cual suscribo al amparo del contrato que tengo celebrado con dicha
+                    instituci&oacute;n
+                    para el uso de esta Tarjeta. Reconozco y acepto que el presente es comprobante de la
+                    operaci&oacute;n
+                    señalada, el cual tiene pleno valor probatorio y fuerza legal en virtud de que firm&eacute; y/o
+                    digit&eacute; mi
                     firma electr&oacute;nica, la cual es de mi exclusiva responsabilidad por lo que manifiesto plena
                     conformidad respecto al cargo efectuado a la cuenta de la que se deriva esta Tarjeta.
-                    El presente pagar&eacute; es negociable &uacute;nicamente con instituciones bancarias, a excepci&oacute;n de que &eacute;ste sea
+                    El presente pagar&eacute; es negociable &uacute;nicamente con instituciones bancarias, a
+                    excepci&oacute;n de que &eacute;ste sea
                     suscrito por tarjetahabientes de American Express.
                     Es importante conservar el voucher ante cualquier solicitud de aclaraci&oacute;n.
                     NO NEGOCIABLE</p>
