@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Recibo de Venta</title>
+    <title>Recibo de Venta Completo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
              
@@ -221,6 +221,14 @@
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 0.25em;
+        }
+
+          .detalleSubtitulo {
+            font-size: 12px;
+            color: [[${neutral}]];
+            margin-top: -8px;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
         .detalleTabla {
@@ -535,7 +543,7 @@
     </tr>
   </tbody>
 </table>
-        <!--Contenido Recibo-->
+            <!--Contenido Recibo-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td colspan="3" class="detalleCompra">
@@ -551,20 +559,90 @@
                             <td>Concepto 2</td>
                             <td align="right">$ 6,500.00</td>
                         </tr>
+
+                    </table>
+            
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
+                        <tr>
+                            <td class="col"></td>
+                        </tr>
+                        <tr class="detalleTablaItem"> </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+       <!--Contenido Recibo-->
+
+        <!--Recarga telefónica-->
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td colspan="3" class="detalleCompra">
+                    <h3 class="detalleTitulo">DETALLE DE RECARGA TELEFÓNICA</h3>
+                    <p class="detalleSubtitulo">Telcel paquetes amigo</p>
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
+                        <tr class="item">
+                            <td></td>
+                            <td>Recarga Telcel paquetes amigo</td>
+                            <td align="right">$ 20.00</td>
+                        </tr>
+                        <tr class="item">
+                            <td></td>
+                            <td>Autorización Recargas</td>
+                            <td align="right">001452204584843</td>
+                        </tr>
+                        <tr class="item">
+                            <td></td>
+                            <td>Teléfono</td>
+                            <td align="right">5549119676</td>
+                        </tr>
                         <tr class="detalleTablaItem">
                             <td class="colMd"></td>
                         </tr>
 
                     </table>
+              
+                </td>
+            </tr>
+        </table>
+    <!--Recarga telefónica-->
+     
+
+
+     <!--Pago de servicio-->
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td colspan="3" class="detalleCompra">
+                    <h3 class="detalleTitulo">DETALLE DE PAGO DE SERVICIOS</h3>
+                    <p class="detalleSubtitulo">Telmex</p>
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
+                        <tr class="item">
+                            <td></td>
+                            <td>Concepto</td>
+                            <td align="right">$ 250.00</td>
+                        </tr>
+                        <tr class="item">
+                            <td></td>
+                            <td>Autorización  </td>
+                            <td align="right">001452204584843</td>
+                        </tr>
+                        <tr class="item">
+                            <td></td>
+                            <td>Referencia</td>
+                            <td align="right">000545454644656444</td>
+                        </tr>
+                        <tr class="detalleTablaItem">
+                            <td class="colMd"></td>
+                               <td class="colMd"></td>
+                        </tr>
+
+                    </table>
+                    
                     <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
                         <tr class="itemTotales ">
-                            <td colspan="2" align="right">IVA 16%</td>
-                            <td align="right">$ 1,586.00</td>
+                            <td colspan="2" align="right">Total</td>
+                            <td align="right">$ 11,770.00</td>
                         </tr>
-                        <tr class="itemTotales ">
-                            <td colspan="2" align="right">Propina 10%</td>
-                            <td align="right">$ 1,150.00</td>
-                        </tr>
+                  
 
                     </table>
 
@@ -577,6 +655,8 @@
                 </td>
             </tr>
         </table>
+    <!--Pago de servicio-->
+
         <!--Banners de pago-->
         <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
             <tr class="banners">
