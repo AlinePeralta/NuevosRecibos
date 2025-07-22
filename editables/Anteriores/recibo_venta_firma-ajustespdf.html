@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Recibo de venta completo cashback</title>
+    <title>Recibo de Venta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
              
@@ -242,7 +242,13 @@
             color: [[${textos}]];
         }
 
-    
+        .monto {
+            font-size: 32px;
+            font-weight: bold;
+            padding: 10px;
+            color: [[${correcto}]];
+            margin-right: 6px;
+        }
 
   .monto {
             font-size: 32px;
@@ -577,7 +583,7 @@
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr class="header">
                 <td colspan="3">
-                    <img src="/img/portadaDelta@4x-100.jpg" alt="Portada">
+                    <img src="${portada}" alt="Portada">
                 </td>
             </tr>
 
@@ -586,11 +592,11 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td class="logo">
-                                <img src="/img/fotoPerfil@4x-100.jpg" alt="Logo">
+                                <img src="${logoAvatar}" alt="Logo" >
                             </td>
                             <td class="col"></td>
                             <td>
-                                <h4 class="nombreNegocio">DELTA DESARROLLO<br>GR&Aacute;FICO</h4>
+                                <h4 class="nombreNegocio">DELTA DESARROLLO<br>GRÁFICO</h4>
                             </td>
                         </tr>
                     </table>
@@ -613,12 +619,10 @@
                 </td>
                 <td align="right">
                     <span class="total">Total</span>
-                    <span class="monto">$ 11,770.00</span>
+                    <span class="monto">$12,650.00</span>
                 </td>
             </tr>
         </table>
-  
-
         <!--Destacado-->
         <table class="container p-md" cellpadding="0" cellspacing="0" align="center">
             <tr align="center" class="destacadoCorrecto">
@@ -628,13 +632,18 @@
             </tr>
         </table>
 
-        <!--Separador-->
-   <table class="container" cellpadding="0" cellspacing="0" align="center">
+   <!--Separador-->
+<table class="container" cellpadding="0" cellspacing="0" align="center">
   <tbody>
     <tr>
       <td >
-        <div class="separador-boleto"></div>
-      
+        <table class="separador-interno" cellpadding="0" cellspacing="0" align="center">
+          <tr>
+            <td class="semi-izq"></td>
+            <td class="separador-interno"></td>
+            <td class="semi-der"></td>
+          </tr>
+        </table>
       </td>
     </tr>
   </tbody>
@@ -655,9 +664,23 @@
                             <td>Concepto 2</td>
                             <td align="right">$ 6,500.00</td>
                         </tr>
+                        <tr class="detalleTablaItem">
+                            <td class="colMd"></td>
+                        </tr>
 
                     </table>
-            
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
+                        <tr class="itemTotales ">
+                            <td colspan="2" align="right">IVA 16%</td>
+                            <td align="right">$ 1,586.00</td>
+                        </tr>
+                        <tr class="itemTotales ">
+                            <td colspan="2" align="right">Propina 10%</td>
+                            <td align="right">$ 1,150.00</td>
+                        </tr>
+
+                    </table>
+
                     <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
                         <tr>
                             <td class="col"></td>
@@ -667,118 +690,6 @@
                 </td>
             </tr>
         </table>
-       <!--Contenido Recibo-->
-
-        <!--Recarga telefónica-->
-        <table class="container" cellpadding="0" cellspacing="0" align="center">
-            <tr>
-                <td colspan="3" class="detalleCompra">
-                    <h3 class="detalleTitulo">RECARGA TELEFÓNICA</h3>
-                    <p class="detalleSubtitulo">Telcel paquetes amigo <br><br>
-                        <span class="detalleLeyenda ">Estimado cliente en caso de presentarse algún problmea con su compra de tiempo aire, favor de comunicarse al número *264, desde su Telcel</span>
-                    </p>
-                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
-                        <tr class="item">
-                            <td></td>
-                            <td>Recarga Telcel paquetes amigo</td>
-                            <td align="right">$ 20.00</td>
-                        </tr>
-                        <tr class="item">
-                            <td></td>
-                            <td>Autorización Recargas</td>
-                            <td align="right">001452204584843</td>
-                        </tr>
-                        <tr class="item">
-                            <td></td>
-                            <td>Teléfono</td>
-                            <td align="right">5549119676</td>
-                        </tr>
-                        <tr class="detalleTablaItem">
-                            <td class="colMd"></td>
-                        </tr>
-
-                    </table>
-              
-                </td>
-            </tr>
-        </table>
-    <!--Recarga telefónica-->
-     
-            <!--CASHBACK-->
-        <table class="container" cellpadding="0" cellspacing="0" align="center">
-            <tr>
-                <td colspan="3" class="detalleCompra">
-                    <h3 class="detalleTitulo">RETIRO EN EFECTIVO</h3>
-                    <p class="detalleSubtitulo">Cashback</p>
-                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
-                        <tr class="item">
-                            <td></td>
-                            <td>Retiro en efectivo</td>
-                            <td align="right">$ 1,200.00</td>
-                        </tr>
-                        <tr class="item">
-                            <td></td>
-                            <td>Autorización efectivo</td>
-                            <td align="right">00454545434843</td>
-                        </tr>
-                     
-                        <tr class="detalleTablaItem">
-                            <td class="colMd"></td>
-                        </tr>
-
-                    </table>
-              
-                </td>
-            </tr>
-        </table>
-    <!--CASHBACK-->
-     
-
-
-     <!--Pago de servicio-->
-        <table class="container" cellpadding="0" cellspacing="0" align="center">
-            <tr>
-                <td colspan="3" class="detalleCompra">
-                    <h3 class="detalleTitulo">PAGO DE SERVICIOS</h3>
-                    <p class="detalleSubtitulo">Telmex</p>
-                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
-                        <tr class="item">
-                            <td></td>
-                            <td>Concepto</td>
-                            <td align="right">$ 250.00</td>
-                        </tr>
-                        <tr class="item">
-                            <td></td>
-                            <td>Autorización  </td>
-                            <td align="right">001452204584843</td>
-                        </tr>
-                        <tr class="item">
-                            <td></td>
-                            <td>Referencia</td>
-                            <td align="right">000545454644656444</td>
-                        </tr>
-                        <tr class="detalleTablaItem">
-                            <td class="colMd"></td>
-                               <td class="colMd"></td>
-                        </tr>
-
-                    </table>
-                    
-                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
-                        <tr class="itemTotales ">
-                            <td colspan="2" align="right">Total</td>
-                            <td align="right">$ 11,770.00</td>
-                        </tr>
-                  
-
-                    </table>
-
-                  
-                </td>
-            </tr>
-        </table>
-    <!--Pago de servicio-->
-     
         <!--Banners de pago-->
         <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
             <tr class="banners">
@@ -795,7 +706,8 @@
                                                         <table border="0" cellspacing="0" cellpadding="0">
                                                             <tr>
                                                                 <td align="center" class="bannerImg">
-                                                                    <img src="/img/Visa.png" width="60" alt="Tarjeta">
+                                                                    <img src="${visa}" width="60"
+                                                                        alt="Tarjeta">
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -821,8 +733,8 @@
                                                         <table border="0" cellspacing="0" cellpadding="0">
                                                             <tr>
                                                                 <td align="center" class="bannerImg">
-                                                                    <img src="/img/contacless.png" width="60"
-                                                                        alt="Metodo de autorizacion">
+                                                                    <img src="${firma}" width="60"
+                                                                        alt="Metodo de autorización">
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -830,7 +742,7 @@
                                                     <td width="15"></td>
                                                     <td valign="middle">
                                                         <p class="tarjeta">AUTORIZADO MEDIANTE</p>
-                                                        <p class="titular">CONTACTLESS</p>
+                                                        <p class="titular">firma</p>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -856,39 +768,39 @@
         </table>
 
         <!--Procesado por-->
-        <table class="container" cellpadding="0" cellspacing="0" align="center">
-            <tr class="banners">
-                <td>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td width="49%" valign="top" class="">
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="procesadorFondo">
-                                    <tr>
-                                        <td class="bannerItemContent">
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                <tr>
-
-                                                    <td width="15"></td>
-                                                    <td valign="middle">
-                                                        <p class="textProcesador ">procesado por</p>
-                                                    </td>
-                                                    <td valign="middle" align="right">
-                                                        <img src="/img/logomarca.png" alt="" class="logoProcesador">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-
-                        </tr>
-                    </table>
+<table class="container" cellpadding="0" cellspacing="0" align="center">
+  <tr class="banners">
+    <td>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="49%" valign="top">
+          
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="fondoProcesador" style="background-color:[[${marca}]]; border-radius: 0 0 10px 10px; letter-spacing: 0.25em; padding: 8px;">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15"></td>
+                      <td valign="middle">
+                        <p class="textProcesador">procesado por</p>
+                      </td>
+                      <td valign="middle" align="right">
+                        <img src="${logoInv}" class="logoProcesador">
+                      </td>
+                    </tr>
+                  </table>
                 </td>
-            </tr>
-        </table>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
     </table>
-    <!-- Datos de la transacci&Oacute;n -->
+    <!-- Datos de la transacción -->
     <table class="containerFooter" cellpadding="0" cellspacing="0" align="center">
 
         <tr>
@@ -907,7 +819,7 @@
                         <td align="right">217550994</td>
                     </tr>
                     <tr>
-                         <td>NO. AUTORIZACI&Oacute;N:</td>
+                        <td>NO. AUTORIZACI&Oacute;N:</td>
                         <td align="right">469410</td>
                     </tr>
                     <tr>
@@ -941,20 +853,14 @@
     <table class="containerTerminos" cellpadding="0" cellspacing="0" align="center">
         <tr>
             <td>
-                <p class="textTerminos">Por este pagar&eacute; prometo y me obligo incondicionalmente a pagar a la orden
-                    de la
-                    instituci&oacute;n emisora de la tarjeta relacionada, en sus oficinas, la cantidad que aparece en el
-                    total
-                    de &eacute;ste t&iacute;tulo el cual suscribo al amparo del contrato que tengo celebrado con dicha
-                    instituci&oacute;n
-                    para el uso de esta Tarjeta. Reconozco y acepto que el presente es comprobante de la
-                    operaci&oacute;n
-                    señalada, el cual tiene pleno valor probatorio y fuerza legal en virtud de que firm&eacute; y/o
-                    digit&eacute; mi
+                <p class="textTerminos">Por este pagar&eacute; prometo y me obligo incondicionalmente a pagar a la orden de la
+                    instituci&oacute;n emisora de la tarjeta relacionada, en sus oficinas, la cantidad que aparece en el total
+                    de &eacute;ste t&iacute;tulo el cual suscribo al amparo del contrato que tengo celebrado con dicha instituci&oacute;n
+                    para el uso de esta Tarjeta. Reconozco y acepto que el presente es comprobante de la operaci&oacute;n
+                    señalada, el cual tiene pleno valor probatorio y fuerza legal en virtud de que firm&eacute; y/o digit&eacute; mi
                     firma electr&oacute;nica, la cual es de mi exclusiva responsabilidad por lo que manifiesto plena
                     conformidad respecto al cargo efectuado a la cuenta de la que se deriva esta Tarjeta.
-                    El presente pagar&eacute; es negociable &uacute;nicamente con instituciones bancarias, a
-                    excepci&oacute;n de que &eacute;ste sea
+                    El presente pagar&eacute; es negociable &uacute;nicamente con instituciones bancarias, a excepci&oacute;n de que &eacute;ste sea
                     suscrito por tarjetahabientes de American Express.
                     Es importante conservar el voucher ante cualquier solicitud de aclaraci&oacute;n.
                     NO NEGOCIABLE</p>

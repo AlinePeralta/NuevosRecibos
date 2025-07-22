@@ -3,27 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Recibo de cancelación</title>
+    <title>Recibo de venta pago de servicios</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-             
-    @font-face {
-        font-family: 'Public Sans';
-        src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'Public Sans';
-        src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Bold.ttf') format('truetype');
-        font-weight: 700;
-        font-style: normal;
-    }
-        body {
+          <style>
+        @font-face {
+            font-family: 'Public Sans';
+            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Public Sans';
+            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+         body {
             margin: 0;
             padding: 0;
-            background:  [[${bodyBg}]];
-          font-family: 'Public Sans', sans-serif; 
+            background: #f4f4f4;
+            font-family: 'Public Sans', sans-serif;
+             width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+            line-height: 100%;
         }
 
         table {
@@ -31,49 +38,54 @@
             width: 100%;
         }
 
+
         .containerRecibo {
             max-width: 600px;
             margin: 0 auto;
-            background: [[${bgLoading}]];
+            background: #fff;
             margin-top: 1rem;
             border-radius: 10px 10px 0 0;
+
         }
 
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: [[${blanco}]];
+            background: #fff;
+
         }
 
         .containerFooter {
             max-width: 600px;
             margin: 0 auto;
-            background: [[${bgLoading}]];
+            background: #f4f4f4;
             padding: 20px;
             border-radius: 0 0 10px 10px;
             font-size: 12px;
-            color: [[${textos}]];;
-              padding: 2rem 4rem 2rem 4rem;
-        }
-        .containerTerminos {
-              background: [[${bgLoading}]];
-            max-width: 600px;
-            margin: 0 auto;
-         padding: 1rem 4rem 4rem 4rem;
-            padding: 20px;
-            font-size: 12px;
-            color: [[${textos}]];
+            color: #0C0C21;
+            padding: 2rem 4rem 2rem 4rem;
         }
 
+        .containerTerminos {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem 4rem 4rem 4rem;
+            padding: 20px;
+            font-size: 12px;
+            color: #333;
+        }
+
+
         .header {
-            background-color: [[${bgLoading}]];
+            background-color: #ffffffcc;
             margin-top: 2rem;
             border-radius: 10px 10px 0 0;
+
         }
 
         .header img {
             width: 600px;
-            height: 165px;
+            height: 180px;
             background-size: cover;
             border-radius: 10px 10px 0 0;
         }
@@ -81,37 +93,37 @@
         .button {
             display: inline-block;
             padding: 6px 12px;
-            background: [[${correctoBg}]];
-            color: [[${correcto}]];
+            background: #C8EFDE;
+            color: #36b57f;
             border-radius: 4px;
             font-size: 14px;
         }
 
-         .p-md {
-             padding-top: 32px;
-            
+
+        .p-md {
+            padding-top: 2rem;
+        padding-bottom: 2rem;
         }
 
         .p-sm {
-          padding-top: 10px; 
-           padding-bottom: 12px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
 
         .pt-md {
-            padding-top: 32px;
-            padding-bottom: 32px;
+            padding-top: 2rem;
         }
 
         .mt-md {
-           margin-top: 16px;
+            margin-top: 1rem;
         }
 
         .mb-md {
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
         }
 
         .negocio {
-             padding: 20px 20px 0 20px;
+            padding: 20px 20px 0 20px;
             text-align: left;
         }
 
@@ -124,11 +136,12 @@
             vertical-align: middle;
         }
 
-          .logo img {
-             width: 60px;
-  height: 60px;
-  border: 2px solid [[${marca}]];
+        .logo img {
+          width: 60px;
+             height: 60px;
+         border: 2px solid #545463;
   border-radius: 50%;
+            border-radius: 50%;
   object-fit: cover;
         }
 
@@ -143,18 +156,17 @@
 
         .nombreNegocio {
             font-size: 18px;
-            color: [[${textos}]];
+            color: #0C0C21;
             margin: 0;
             font-weight: bold;
         }
 
         .fechaRecibo {
-            padding: 10px 10px 0 0;
+            padding: 10px;
             font-size: 12px;
             text-align: right;
             margin: 0;
-            color: [[${textos}]];
-            margin-right: 6px;
+            color: #545463;
         }
 
         .badgeContainer {
@@ -162,7 +174,6 @@
             font-size: 14px;
         }
 
-        
        .badgeCorrecto {
             display: inline-block;
             padding: .3em .7em;
@@ -172,8 +183,8 @@
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: 10px;
-            color: [[${correcto}]];
-            background-color: [[${correctoBg}]];
+            color: #36b57f;
+            background-color: #C8EFDE;
             margin-right: 5px
         }
           .badgeE{
@@ -185,27 +196,27 @@
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: 10px;
-            color: [[${error}]];
-            background-color: [[${errorBg}]];
+            color: #ff0000;
+            background-color:#ffe6e6;
             margin-right: 5px
         }
 
         .destacadoCorrecto {
-            color: [[${correcto}]];
-            background-color: [[${correctoBg}]];
+            color: #36b57f;
+            background-color: #C8EFDE;
             height: 10px;
             font-size: 12px;
         }
 
-          .destacadoAdv {
-            color: [[${advertencia}]];
-            background-color: [[${advertenciaBg}]];
+        .destacadoAdv {
+            color: #ffab00;
+            background-color: #FFEECC;
             height: 10px;
             font-size: 12px;
         }
           .destacadoError {
-            color: [[${error}]];
-            background-color: [[${errorBg}]];
+            color: #ff0000;
+            background-color: #ffe6e6;
             height: 10px;
             font-size: 12px;
         }
@@ -219,10 +230,10 @@
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: 10px;
-            color: [[${error}]];
-            background-color: [[${errorBg}]];
+            color: #ff0000;
+            background-color: #ffe6e6;
         }
-   .badgeAdvertencia {
+             .badgeAdvertencia {
             display: inline-block;
             padding: .3em .7em;
             font-size: 12px;
@@ -231,56 +242,44 @@
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: 10px;
-         color: [[${advertencia}]];
-            background-color: [[${advertenciaBg}]];
+         color: #ffab00;
+            background-color: #FFEECC;
         }
 
         .total {
             font-size: 24px;
             font-weight: bold;
             padding: 10px;
-            color: [[${textos}]];
+            color: #0C0C21;
         }
 
-        .monto {
+          .monto {
             font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: [[${correcto}]];
+            color: #36b57f;
             margin-right: 6px;
         }
-
-  .monto {
+          .montoAdv {
             font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: [[${correcto}]];
-            margin-right: 6px;
-        }
-
-         .montoAdv {
-            font-size: 32px;
-            font-weight: bold;
-            padding: 10px;
-              color:[[${advertencia}]];
+              color: #ffab00;
       
         }
+
         .montoError {
             font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: [[${error}]];
+            color: #ff0000;
         }
         .monto-text {
             font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: [[${textos}]];
+            color: #0C0C21;
         }
-
-
-
-
 
         .textDestacado {
             font-size: 14px;
@@ -290,15 +289,15 @@
         }
 
         .separador {
-            border-top: 1px dotted [[${neutral}]];
+            border-top: 1px dotted #545463;
             line-height: 1px;
             height: 1px;
         }
 
-                
+        
 .separador-boleto {
   position: relative;
-  background-color:[[${blanco}]];
+  background-color: #ffffff;
   width: 100%;
   height: 30px;
   background-image: radial-gradient(circle at center, #999 1px, transparent 1px);
@@ -313,7 +312,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color:[[${bodyBg}]];
+  background-color: #f4f4f4;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -326,26 +325,29 @@
   right: -10px;
 }
 
-        .detalleCompra {
-             padding: 8px 28px 40px 28px;
+         .detalleCompra {
+           padding: 8px 28px 40px 28px;
             font-size: 14px;
-            color: [[${textos}]];
+            color: #333;
         }
 
+        .detalleMotivo {
+             padding: 8px 28px 0px 28px;
+            font-size: 14px;
+            color: #333;
+        }
         .detalleTitulo {
             font-size: 14px;
-            color: [[${textos}]];
+            color: #0C0C21;
             margin-bottom: 20px;
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 0.25em;
         }
 
-       
-
-    .detalleSubtitulo {
+          .detalleSubtitulo {
             font-size: 12px;
-            color: [[${neutral}]];
+            color: #545463;
             margin-top: -8px;
             margin-bottom: 20px;
             padding-top: 2px;
@@ -356,13 +358,10 @@
       .detalleLeyenda {
             font-size: 10px;
             line-height: 1.6;
-            color: [[${skeletonLoad}]];
+            color: #c1c1c1;
             margin: 0 auto;
             text-align: center;
         }
-
-
-
         .detalleTabla {
             width: 100%;
             border-collapse: collapse;
@@ -370,7 +369,7 @@
         }
 
         .detalleTablaItem {
-            border-bottom: 1px solid [[${skeletonLoad}]];
+            border-bottom: 1px solid #c1c1c1;
             padding: 20px;
         }
 
@@ -387,14 +386,13 @@
         }
 
         .bannerItem {
-            background-color: [[${bannerItem}]];
+            background-color: #E9EBF8;
             border-radius: 10px;
-            font-family: Arial, Helvetica, sans-serif;
+
         }
 
         .bannerItemContent {
             padding: 10px;
-            
         }
 
         .bannerImg {
@@ -402,7 +400,8 @@
             height: 60px;
             border-radius: 8px;
         }
-         .bannerImg img {
+
+        .bannerImg img {
             width: 60px;
             height: auto;
             border-radius: 8px;
@@ -410,7 +409,7 @@
 
         .tarjeta {
             font-size: 14px;
-            color: [[${textos}]];;
+            color: #333333;
             font-weight: bold;
 
             margin: 0;
@@ -419,45 +418,43 @@
 
         .titular {
             font-size: 12px;
-            color: {{neutral}};
+            color: #545463;
             padding-top: 4px;
             margin: 0;
             text-transform: uppercase;
         }
 
         .compraText {
-            padding: 20px;
+            padding: 30px;
             text-align: center;
+            margin: auto;
         }
 
         .text {
             margin: 0;
             font-size: 12px;
-            color: [[${textos}]];;
+            color: #0C0C21;
             line-height: 1.6;
             font-weight: 100;
         }
 
         .procesadorFondo {
-            background-image:[[${fondoProcesador}]];
-            background-color: [[${marca}]];
+            background-image: url('/img/fondoProcesador.png');
+            background-color: #233A87;
             border-radius: 0 0 10px 10px;
             letter-spacing: 0.25em;
         }
-
-             .fondoProcesador {
-             background-image:[[${fondoProcesador}]];
-            background-color: [[${marca}]];
+     .fondoProcesador {
+             background-image:url('/img/fondoProcesador.png');
+            background-color: #233A87;
             border-radius: 0 0 10px 10px;
          padding: 10px;
         }
 
-        
-
         .textProcesador {
             margin: 0;
             font-size: 12px;
-            color: [[${blanco}]];
+            color: #ffffff;
             line-height: 1.6;
             font-weight: 100;
             text-transform: uppercase;
@@ -465,23 +462,24 @@
 
         .logoProcesador {
             padding-right: 1rem;
-              width: 100px;
+            width: 150px;
         }
 
-          .logoProcesador img {
+        .logoProcesador img {
             width: 100px;
             height: auto;
         }
+
+
+
         .textTerminos {
             font-size: 10px;
             line-height: 1.4;
             text-align: justify;
         }
-  
- 
 
-          @media only screen and (max-width: 560px) {
-            .logo img{
+        @media only screen and (max-width: 560px) {
+            .logo img {
                 width: 40px;
                 height: auto;
             }
@@ -558,12 +556,12 @@
                 padding: 20px;
             }
 
-            .logoProcesador img{
+            .logoProcesador img {
                 width: 100px;
                 height: auto;
             }
         }
-        
+
         @media only screen and (max-width: 620px) {
             .container {
                 width: 90% !important;
@@ -613,26 +611,27 @@
         <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td align="left" class="badgeContainer">
-                    <span class="badgeAdvertencia">Devolución</span>
-                       <span class="badgeCorrecto">Aprobada</span>
-        
+                    <span class="badgeCorrecto">Aprobada</span>
+                    <span class="badgeCorrecto">Pago de servicios</span>
                 </td>
                 <td align="right">
                     <span class="total">Total</span>
-                    <span class="montoAdv">$14,236</span>
+                    <span class="monto">$ 11,770.00</span>
                 </td>
             </tr>
         </table>
-        <!--Destacado-->
+  
+
+       <!--Destacado-->
         <table class="container p-md" cellpadding="0" cellspacing="0" align="center">
-            <tr align="center" class="destacadoAdv">
+            <tr align="center" class="destacadoCorrecto">
                 <td>
-                    <p class="textDestacado">Devolución de la compra realizada</p>
+                    <p class="textDestacado">Venta a 3 Meses Sin Intereses de $4,217.00</p>
                 </td>
             </tr>
         </table>
 
-            <!--Separador-->
+        <!--Separador-->
    <table class="container" cellpadding="0" cellspacing="0" align="center">
   <tbody>
     <tr>
@@ -659,33 +658,66 @@
                             <td>Concepto 2</td>
                             <td align="right">$ 6,500.00</td>
                         </tr>
-                        <tr class="detalleTablaItem">
-                            <td class="colMd"></td>
-                        </tr>
 
                     </table>
+            
                     <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
-                        <tr class="itemTotales ">
-                            <td colspan="2" align="right">IVA 16%</td>
-                            <td align="right">$ 1,586.00</td>
+                        <tr>
+                            <td class="col"></td>
                         </tr>
-                        <tr class="itemTotales ">
-                            <td colspan="2" align="right">Propina 10%</td>
-                            <td align="right">$ 1,150.00</td>
-                        </tr>
-  <tr class="itemTotales ">
-                            <td colspan="2" align="right">Total</td>
-                            <td align="right">$ 14,236</td>
-                        </tr>
+                        <tr class="detalleTablaItem"> </tr>
                     </table>
-
-                  
                 </td>
             </tr>
         </table>
        <!--Contenido Recibo-->
 
-      
+
+     <!--Pago de servicio-->
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td colspan="3" class="detalleCompra">
+                    <h3 class="detalleTitulo">PAGO DE SERVICIOS</h3>
+                    <p class="detalleSubtitulo">Telmex</p>
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
+                        <tr class="item">
+                            <td></td>
+                            <td>Concepto</td>
+                            <td align="right">$ 250.00</td>
+                        </tr>
+                        <tr class="item">
+                            <td></td>
+                            <td>Autorización  </td>
+                            <td align="right">001452204584843</td>
+                        </tr>
+                        <tr class="item">
+                            <td></td>
+                            <td>Referencia</td>
+                            <td align="right">000545454644656444</td>
+                        </tr>
+                        <tr class="detalleTablaItem">
+                            <td class="colMd"></td>
+                               <td class="colMd"></td>
+                        </tr>
+
+                    </table>
+                    
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
+                        <tr class="itemTotales ">
+                            <td colspan="2" align="right">Total</td>
+                            <td align="right">$ 11,770.00</td>
+                        </tr>
+                  
+
+                    </table>
+
+               
+                </td>
+            </tr>
+        </table>
+    <!--Pago de servicio-->
+     
+     
         <!--Banners de pago-->
         <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
             <tr class="banners">
@@ -755,7 +787,8 @@
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td colspan="3" class="compraText">
-                    <h5 class="text">Tu cancelación ha sido procesada de forma segura.  Por favor conserva este comprobante para cualquier aclaraci&oacute;n.</h5>
+                    <h5 class="text">Tu compra ha sido procesada de forma segura. <br>
+                        Por favor conserva este comprobante para cualquier aclaraci&oacute;n.</h5>
 
                 </td>
             </tr>
@@ -813,7 +846,7 @@
                         <td align="right">217550994</td>
                     </tr>
                     <tr>
-                        <td>NO. AUTORIZACI&Oacute;;N:</td>
+                         <td>NO. AUTORIZACI&Oacute;N:</td>
                         <td align="right">469410</td>
                     </tr>
                     <tr>

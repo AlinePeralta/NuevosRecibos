@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Recibo de venta completo cashback</title>
+    <title>Recibo de venta pago de servicios</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
              
@@ -242,7 +242,13 @@
             color: [[${textos}]];
         }
 
-    
+        .monto {
+            font-size: 32px;
+            font-weight: bold;
+            padding: 10px;
+            color: [[${correcto}]];
+            margin-right: 6px;
+        }
 
   .monto {
             font-size: 32px;
@@ -609,7 +615,7 @@
             <tr>
                 <td align="left" class="badgeContainer">
                     <span class="badgeCorrecto">Aprobada</span>
-                    <span class="badgeCorrecto">3 MSI</span>
+                    <span class="badgeCorrecto">Pago de servicios</span>
                 </td>
                 <td align="right">
                     <span class="total">Total</span>
@@ -619,7 +625,7 @@
         </table>
   
 
-        <!--Destacado-->
+       <!--Destacado-->
         <table class="container p-md" cellpadding="0" cellspacing="0" align="center">
             <tr align="center" class="destacadoCorrecto">
                 <td>
@@ -669,71 +675,6 @@
         </table>
        <!--Contenido Recibo-->
 
-        <!--Recarga telefónica-->
-        <table class="container" cellpadding="0" cellspacing="0" align="center">
-            <tr>
-                <td colspan="3" class="detalleCompra">
-                    <h3 class="detalleTitulo">RECARGA TELEFÓNICA</h3>
-                    <p class="detalleSubtitulo">Telcel paquetes amigo <br><br>
-                        <span class="detalleLeyenda ">Estimado cliente en caso de presentarse algún problmea con su compra de tiempo aire, favor de comunicarse al número *264, desde su Telcel</span>
-                    </p>
-                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
-                        <tr class="item">
-                            <td></td>
-                            <td>Recarga Telcel paquetes amigo</td>
-                            <td align="right">$ 20.00</td>
-                        </tr>
-                        <tr class="item">
-                            <td></td>
-                            <td>Autorización Recargas</td>
-                            <td align="right">001452204584843</td>
-                        </tr>
-                        <tr class="item">
-                            <td></td>
-                            <td>Teléfono</td>
-                            <td align="right">5549119676</td>
-                        </tr>
-                        <tr class="detalleTablaItem">
-                            <td class="colMd"></td>
-                        </tr>
-
-                    </table>
-              
-                </td>
-            </tr>
-        </table>
-    <!--Recarga telefónica-->
-     
-            <!--CASHBACK-->
-        <table class="container" cellpadding="0" cellspacing="0" align="center">
-            <tr>
-                <td colspan="3" class="detalleCompra">
-                    <h3 class="detalleTitulo">RETIRO EN EFECTIVO</h3>
-                    <p class="detalleSubtitulo">Cashback</p>
-                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
-                        <tr class="item">
-                            <td></td>
-                            <td>Retiro en efectivo</td>
-                            <td align="right">$ 1,200.00</td>
-                        </tr>
-                        <tr class="item">
-                            <td></td>
-                            <td>Autorización efectivo</td>
-                            <td align="right">00454545434843</td>
-                        </tr>
-                     
-                        <tr class="detalleTablaItem">
-                            <td class="colMd"></td>
-                        </tr>
-
-                    </table>
-              
-                </td>
-            </tr>
-        </table>
-    <!--CASHBACK-->
-     
-
 
      <!--Pago de servicio-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
@@ -773,11 +714,12 @@
 
                     </table>
 
-                  
+               
                 </td>
             </tr>
         </table>
     <!--Pago de servicio-->
+     
      
         <!--Banners de pago-->
         <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">

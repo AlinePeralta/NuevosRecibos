@@ -6,24 +6,31 @@
     <title>Recibo de Venta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-             
-    @font-face {
-        font-family: 'Public Sans';
-        src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'Public Sans';
-        src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Bold.ttf') format('truetype');
-        font-weight: 700;
-        font-style: normal;
-    }
-        body {
+        @font-face {
+            font-family: 'Public Sans';
+            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Public Sans';
+            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+         body {
             margin: 0;
             padding: 0;
-            background:  [[${bodyBg}]];
-          font-family: 'Public Sans', sans-serif; 
+            background: #f4f4f4;
+            font-family: 'Public Sans', sans-serif;
+             width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+            line-height: 100%;
         }
 
         table {
@@ -31,44 +38,50 @@
             width: 100%;
         }
 
+
         .containerRecibo {
             max-width: 600px;
             margin: 0 auto;
-            background: [[${bgLoading}]];
+            background: #fff;
             margin-top: 1rem;
             border-radius: 10px 10px 0 0;
+
         }
 
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: [[${blanco}]];
+            background: #fff;
+
         }
 
         .containerFooter {
             max-width: 600px;
             margin: 0 auto;
-            background: [[${bgLoading}]];
+            background: #f4f4f4;
             padding: 20px;
             border-radius: 0 0 10px 10px;
             font-size: 12px;
-            color: [[${textos}]];;
-              padding: 2rem 4rem 2rem 4rem;
-        }
-        .containerTerminos {
-              background: [[${bgLoading}]];
-            max-width: 600px;
-            margin: 0 auto;
-         padding: 1rem 4rem 4rem 4rem;
-            padding: 20px;
-            font-size: 12px;
-            color: [[${textos}]];
+            color: #0C0C21;
+            padding: 2rem 4rem 2rem 4rem;
         }
 
+        .containerTerminos {
+            max-width: 600px;
+            background: #f4f4f4;
+            margin: 0 auto;
+            padding: 1rem 4rem 4rem 4rem;
+            padding: 20px;
+            font-size: 12px;
+            color: #333;
+        }
+
+
         .header {
-            background-color: [[${bgLoading}]];
+            background-color: #ffffffcc;
             margin-top: 2rem;
             border-radius: 10px 10px 0 0;
+
         }
 
         .header img {
@@ -81,29 +94,28 @@
         .button {
             display: inline-block;
             padding: 6px 12px;
-            background: [[${correctoBg}]];
-            color: [[${correcto}]];
+            background: #C8EFDE;
+            color: #36b57f;
             border-radius: 4px;
             font-size: 14px;
         }
 
-         .p-md {
-             padding-top: 32px;
-            
+
+        .p-md {
+            padding-top: 32px;
         }
 
         .p-sm {
-          padding-top: 10px; 
-           padding-bottom: 12px;
+            padding-top: 10px;
+            padding-bottom: 12px;
         }
 
         .pt-md {
             padding-top: 32px;
-            padding-bottom: 32px;
         }
 
         .mt-md {
-           margin-top: 16px;
+            margin-top: 16px;
         }
 
         .mb-md {
@@ -111,25 +123,24 @@
         }
 
         .negocio {
-             padding: 20px 20px 0 20px;
+            padding: 20px 20px 0 20px;
             text-align: left;
         }
 
         .logo {
             width: 60px;
             height: auto;
-            border-radius: 50%;
             overflow: hidden;
             text-align: center;
             vertical-align: middle;
         }
 
-          .logo img {
-             width: 60px;
-  height: 60px;
-  border: 2px solid [[${marca}]];
-  border-radius: 50%;
-  object-fit: cover;
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #233A87;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .col {
@@ -143,7 +154,7 @@
 
         .nombreNegocio {
             font-size: 18px;
-            color: [[${textos}]];
+            color: #0C0C21;
             margin: 0;
             font-weight: bold;
         }
@@ -153,8 +164,7 @@
             font-size: 12px;
             text-align: right;
             margin: 0;
-            color: [[${textos}]];
-            margin-right: 6px;
+            color: #545463;
         }
 
         .badgeContainer {
@@ -162,125 +172,41 @@
             font-size: 14px;
         }
 
-        
-       .badgeCorrecto {
+        .badgeCorrecto {
             display: inline-block;
-            padding: .3em .7em;
+            padding: 4px 10px;
             font-size: 12px;
             line-height: 1;
             text-align: center;
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: 10px;
-            color: [[${correcto}]];
-            background-color: [[${correctoBg}]];
-            margin-right: 5px
-        }
-          .badgeE{
-            display: inline-block;
-            padding: .3em .7em;
-            font-size: 12px;
-            line-height: 1;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: baseline;
-            border-radius: 10px;
-            color: [[${error}]];
-            background-color: [[${errorBg}]];
+            color: #36b57f;
+            background-color: #C8EFDE;
             margin-right: 5px
         }
 
         .destacadoCorrecto {
-            color: [[${correcto}]];
-            background-color: [[${correctoBg}]];
+            color: #36b57f;
+            background-color: #C8EFDE;
             height: 10px;
             font-size: 12px;
-        }
-
-          .destacadoAdv {
-            color: [[${advertencia}]];
-            background-color: [[${advertenciaBg}]];
-            height: 10px;
-            font-size: 12px;
-        }
-          .destacadoError {
-            color: [[${error}]];
-            background-color: [[${errorBg}]];
-            height: 10px;
-            font-size: 12px;
-        }
-
-        .badgeError {
-            display: inline-block;
-            padding: .3em .7em;
-            font-size: 12px;
-            line-height: 1;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: baseline;
-            border-radius: 10px;
-            color: [[${error}]];
-            background-color: [[${errorBg}]];
-        }
-   .badgeAdvertencia {
-            display: inline-block;
-            padding: .3em .7em;
-            font-size: 12px;
-            line-height: 1;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: baseline;
-            border-radius: 10px;
-         color: [[${advertencia}]];
-            background-color: [[${advertenciaBg}]];
         }
 
         .total {
             font-size: 24px;
             font-weight: bold;
             padding: 10px;
-            color: [[${textos}]];
+            color: #0C0C21;
         }
 
         .monto {
             font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: [[${correcto}]];
+            color: #36b57f;
             margin-right: 6px;
         }
-
-  .monto {
-            font-size: 32px;
-            font-weight: bold;
-            padding: 10px;
-            color: [[${correcto}]];
-            margin-right: 6px;
-        }
-
-         .montoAdv {
-            font-size: 32px;
-            font-weight: bold;
-            padding: 10px;
-              color:[[${advertencia}]];
-      
-        }
-        .montoError {
-            font-size: 32px;
-            font-weight: bold;
-            padding: 10px;
-            color: [[${error}]];
-        }
-        .monto-text {
-            font-size: 32px;
-            font-weight: bold;
-            padding: 10px;
-            color: [[${textos}]];
-        }
-
-
-
-
 
         .textDestacado {
             font-size: 14px;
@@ -290,78 +216,25 @@
         }
 
         .separador {
-            border-top: 1px dotted [[${neutral}]];
+            border-top: 1px dotted #545463;
             line-height: 1px;
             height: 1px;
         }
 
-                
-.separador-boleto {
-  position: relative;
-  background-color:[[${blanco}]];
-  width: 100%;
-  height: 30px;
-  background-image: radial-gradient(circle at center, #999 1px, transparent 1px);
-  background-size: 6px 100%;
-  background-position: 0 center;
-}
-
-.separador-boleto::before,
-.separador-boleto::after {
-  content: '';
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color:[[${bodyBg}]];
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.separador-boleto::before {
-  left: -10px;
-}
-
-.separador-boleto::after {
-  right: -10px;
-}
-
         .detalleCompra {
-             padding: 8px 28px 40px 28px;
+            padding: 8px 28px 40px 28px;
             font-size: 14px;
-            color: [[${textos}]];
+            color: #333;
         }
 
         .detalleTitulo {
             font-size: 14px;
-            color: [[${textos}]];
+            color: #0C0C21;
             margin-bottom: 20px;
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 0.25em;
         }
-
-       
-
-    .detalleSubtitulo {
-            font-size: 12px;
-            color: [[${neutral}]];
-            margin-top: -8px;
-            margin-bottom: 20px;
-            padding-top: 2px;
-            padding-left: 40px;
-            padding-right: 40px;
-            text-align: center;
-        }
-      .detalleLeyenda {
-            font-size: 10px;
-            line-height: 1.6;
-            color: [[${skeletonLoad}]];
-            margin: 0 auto;
-            text-align: center;
-        }
-
-
 
         .detalleTabla {
             width: 100%;
@@ -370,7 +243,7 @@
         }
 
         .detalleTablaItem {
-            border-bottom: 1px solid [[${skeletonLoad}]];
+            border-bottom: 1px solid #c1c1c1;
             padding: 20px;
         }
 
@@ -387,9 +260,9 @@
         }
 
         .bannerItem {
-            background-color: [[${bannerItem}]];
+            background-color: #E9EBF8;
             border-radius: 10px;
-            font-family: Arial, Helvetica, sans-serif;
+
         }
 
         .bannerItemContent {
@@ -402,7 +275,8 @@
             height: 60px;
             border-radius: 8px;
         }
-         .bannerImg img {
+
+        .bannerImg img {
             width: 60px;
             height: auto;
             border-radius: 8px;
@@ -410,7 +284,7 @@
 
         .tarjeta {
             font-size: 14px;
-            color: [[${textos}]];;
+            color: #333333;
             font-weight: bold;
 
             margin: 0;
@@ -419,45 +293,43 @@
 
         .titular {
             font-size: 12px;
-            color: {{neutral}};
+            color: #545463;
             padding-top: 4px;
             margin: 0;
             text-transform: uppercase;
         }
 
         .compraText {
-            padding: 20px;
+            padding: 30px;
             text-align: center;
+            margin: auto;
         }
 
         .text {
             margin: 0;
             font-size: 12px;
-            color: [[${textos}]];;
+            color: #0C0C21;
             line-height: 1.6;
             font-weight: 100;
         }
 
         .procesadorFondo {
-            background-image:[[${fondoProcesador}]];
-            background-color: [[${marca}]];
+            background-color: #233A87;
             border-radius: 0 0 10px 10px;
             letter-spacing: 0.25em;
         }
-
-             .fondoProcesador {
-             background-image:[[${fondoProcesador}]];
-            background-color: [[${marca}]];
+        .fondoProcesador {
+              /* background-image: url('/img/fondoProcesador.png'); */
+            background-color: #233A87;
             border-radius: 0 0 10px 10px;
          padding: 10px;
         }
 
-        
 
         .textProcesador {
             margin: 0;
             font-size: 12px;
-            color: [[${blanco}]];
+            color: #ffffff;
             line-height: 1.6;
             font-weight: 100;
             text-transform: uppercase;
@@ -465,23 +337,61 @@
 
         .logoProcesador {
             padding-right: 1rem;
-              width: 100px;
+            width: 100px;
         }
 
-          .logoProcesador img {
+        .logoProcesador img {
             width: 100px;
             height: auto;
         }
+
         .textTerminos {
             font-size: 10px;
             line-height: 1.4;
             text-align: justify;
         }
-  
- 
 
-          @media only screen and (max-width: 560px) {
-            .logo img{
+        .separador-interno {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .semi-izq,
+        .semi-der {
+            width: 17px;
+            height: 38px;
+            background-color: #f4f4f4;
+            vertical-align: middle;
+        }
+
+        .semi-der  {
+  width: 17px;
+  height: 38px;
+  background-color: #f4f4f4;
+
+}
+
+        .semi-izq {
+  width: 17px;
+  height: 38px;
+  background-color: #f4f4f4;
+ 
+}
+
+        .semi-izq {
+            border-top-right-radius: 38px;
+            border-bottom-right-radius: 38px;
+        }
+
+        .semi-der {
+            border-top-left-radius: 38px;
+            border-bottom-left-radius: 38px;
+        }
+
+
+
+        @media only screen and (max-width: 560px) {
+            .logo img {
                 width: 40px;
                 height: auto;
             }
@@ -558,12 +468,12 @@
                 padding: 20px;
             }
 
-            .logoProcesador img{
+            .logoProcesador img {
                 width: 100px;
                 height: auto;
             }
         }
-        
+
         @media only screen and (max-width: 620px) {
             .container {
                 width: 90% !important;
@@ -582,7 +492,8 @@
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr class="header">
                 <td colspan="3">
-                    <img src="${portada}" alt="Portada">
+                    <img src="https://serti-static.s3.us-east-1.amazonaws.com/Codice-Serti/img/clientes/ualabis/portada.png"
+                        alt="Portada">
                 </td>
             </tr>
 
@@ -591,7 +502,8 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td class="logo">
-                                <img src="${logoInv}" alt="Logo">
+                                <img src="https://serti-static.s3.us-east-1.amazonaws.com/Codice-Serti/img/clientes/ualabis/avatar.png"
+                                    alt="Logo">
                             </td>
                             <td class="col"></td>
                             <td>
@@ -618,7 +530,7 @@
                 </td>
                 <td align="right">
                     <span class="total">Total</span>
-                    <span class="monto">$14,236</span>
+                    <span class="monto">$12,650.00</span>
                 </td>
             </tr>
         </table>
@@ -631,28 +543,33 @@
             </tr>
         </table>
 
+
+
         <!--Separador-->
-   <table class="container" cellpadding="0" cellspacing="0" align="center">
-  <tbody>
-    <tr>
-      <td >
-        <div class="separador-boleto"></div>
-        <table class="separador-interno" cellpadding="0" cellspacing="0" align="center">
-          <tr>
-            <td class="semi-izq"></td>
-            <td class="separador-interno"></td>
-            <td class="semi-der"></td>
-          </tr>
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tbody>
+                <tr>
+                    <td>
+                        <table class="separador-interno" cellpadding="0" cellspacing="0" align="center">
+                            <tr>
+                                <td class="semi-izq"></td>
+                                <td class="separador-interno"></td>
+                                <td class="semi-der"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
         </table>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+
         <!--Contenido Recibo-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
+                
                 <td colspan="3" class="detalleCompra">
                     <h3 class="detalleTitulo">DETALLE DE LA COMPRA</h3>
+                    
                     <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
                         <tr class="item">
                             <td>01</td>
@@ -678,19 +595,18 @@
                             <td colspan="2" align="right">Propina 10%</td>
                             <td align="right">$ 1,150.00</td>
                         </tr>
-  <tr class="itemTotales ">
-                            <td colspan="2" align="right">Total</td>
-                            <td align="right">$ 14,236</td>
-                        </tr>
+
                     </table>
 
-                 
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
+                        <tr>
+                            <td class="col"></td>
+                        </tr>
+                        <tr class="detalleTablaItem"> </tr>
+                    </table>
                 </td>
             </tr>
         </table>
-       <!--Contenido Recibo-->
-
-      
         <!--Banners de pago-->
         <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
             <tr class="banners">
@@ -707,7 +623,7 @@
                                                         <table border="0" cellspacing="0" cellpadding="0">
                                                             <tr>
                                                                 <td align="center" class="bannerImg">
-                                                                    <img src="${visa}" width="60" alt="Tarjeta">
+                                                                    <img src="/img/Visa.png" width="60" alt="Tarjeta">
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -733,7 +649,7 @@
                                                         <table border="0" cellspacing="0" cellpadding="0">
                                                             <tr>
                                                                 <td align="center" class="bannerImg">
-                                                                    <img src="${firma}" width="60"
+                                                                    <img src="/img/contacless.png" width="60"
                                                                         alt="Metodo de autorizacion">
                                                                 </td>
                                                             </tr>
@@ -762,45 +678,46 @@
                 <td colspan="3" class="compraText">
                     <h5 class="text">Tu compra ha sido procesada de forma segura. <br>
                         Por favor conserva este comprobante para cualquier aclaraci&oacute;n.</h5>
-
                 </td>
             </tr>
         </table>
 
         <!--Procesado por-->
-        <table class="container" cellpadding="0" cellspacing="0" align="center">
-            <tr class="banners">
-                <td>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td width="49%" valign="top" class="">
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="procesadorFondo">
-                                    <tr>
-                                        <td class="bannerItemContent">
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                <tr>
-
-                                                    <td width="15"></td>
-                                                    <td valign="middle">
-                                                        <p class="textProcesador ">procesado por</p>
-                                                    </td>
-                                                    <td valign="middle" align="right">
-                                                        <img src="/img/logomarca.png" alt="" class="logoProcesador">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-
-                        </tr>
-                    </table>
+    
+<table class="container" cellpadding="0" cellspacing="0" align="center">
+  <tr class="banners">
+    <td>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="49%" valign="top">
+          
+            <table width="100%" border="0" cellspacing="0" cellpadding="0"
+              style="background-color: [[${marca}]]; border-radius: 0 0 10px 10px; letter-spacing: 0.25em; padding: 8px;">
+              <tr>
+                <td class="fondoProcesador">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15"></td>
+                      <td valign="middle">
+                        <p class="textProcesador">procesado por</p>
+                      </td>
+                      <td valign="middle" align="right">
+                        <img src="https://serti-static.s3.us-east-1.amazonaws.com/Codice-Serti/img/clientes/ualabis/logoblanco.png" alt="Logo procesador" class="logoProcesador">
+                      </td>
+                    </tr>
+                  </table>
                 </td>
-            </tr>
-        </table>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
     </table>
-    <!-- Datos de la transacci&Oacute;n -->
+    <!-- Datos de la transacción -->
     <table class="containerFooter" cellpadding="0" cellspacing="0" align="center">
 
         <tr>
@@ -819,7 +736,7 @@
                         <td align="right">217550994</td>
                     </tr>
                     <tr>
-                        <td>NO. AUTORIZACI&Oacute;;N:</td>
+                        <td>NO. AUTORIZACI&Oacute;N:</td>
                         <td align="right">469410</td>
                     </tr>
                     <tr>

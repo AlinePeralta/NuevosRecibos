@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Recibo de cancelación</title>
+    <title>Recibo de venta recarga</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <style>
+      <style>
         @font-face {
             font-family: 'Public Sans';
             src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Regular.ttf') format('truetype');
@@ -20,11 +20,17 @@
             font-style: normal;
         }
 
-        body {
+         body {
             margin: 0;
             padding: 0;
             background: #f4f4f4;
             font-family: 'Public Sans', sans-serif;
+             width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+            line-height: 100%;
         }
 
         table {
@@ -155,7 +161,6 @@
             font-weight: bold;
         }
 
-    
         .fechaRecibo {
             padding: 10px;
             font-size: 12px;
@@ -321,12 +326,17 @@
   right: -10px;
 }
 
-        .detalleCompra {
+         .detalleCompra {
            padding: 8px 28px 40px 28px;
             font-size: 14px;
             color: #333;
         }
 
+        .detalleMotivo {
+             padding: 8px 28px 0px 28px;
+            font-size: 14px;
+            color: #333;
+        }
         .detalleTitulo {
             font-size: 14px;
             color: #0C0C21;
@@ -340,9 +350,20 @@
             font-size: 12px;
             color: #545463;
             margin-top: -8px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+            padding-top: 2px;
+            padding-left: 40px;
+            padding-right: 40px;
             text-align: center;
         }
+      .detalleLeyenda {
+            font-size: 10px;
+            line-height: 1.6;
+            color: #c1c1c1;
+            margin: 0 auto;
+            text-align: center;
+        }
+
 
         .detalleTabla {
             width: 100%;
@@ -407,8 +428,9 @@
         }
 
         .compraText {
-            padding: 20px;
+            padding: 30px;
             text-align: center;
+            margin: auto;
         }
 
         .text {
@@ -592,25 +614,28 @@
         <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td align="left" class="badgeContainer">
-                    <span class="badgeError">Cancelación</span>
-        
+                    <span class="badgeCorrecto">Aprobada</span>
+                  
+                     <span class="badgeCorrecto">VTA</span>
                 </td>
                 <td align="right">
                     <span class="total">Total</span>
-                    <span class="montoError">$14,236</span>
+                    <span class="monto">$ 11,770.00</span>
                 </td>
             </tr>
         </table>
-        <!--Destacado-->
+  
+
+      <!--Destacado-->
         <table class="container p-md" cellpadding="0" cellspacing="0" align="center">
-            <tr align="center" class="destacadoError">
+            <tr align="center" class="destacadoCorrecto">
                 <td>
-                    <p class="textDestacado">Cancelación de la compra realizada</p>
+                    <p class="textDestacado">Venta a 3 Meses Sin Intereses de $4,217.00</p>
                 </td>
             </tr>
         </table>
 
-            <!--Separador-->
+        <!--Separador-->
    <table class="container" cellpadding="0" cellspacing="0" align="center">
   <tbody>
     <tr>
@@ -621,7 +646,7 @@
     </tr>
   </tbody>
 </table>
-        <!--Contenido Recibo-->
+      <!--Contenido Recibo-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td colspan="3" class="detalleCompra">
@@ -642,8 +667,48 @@
                         </tr>
 
                     </table>
-                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
-                        <tr class="itemTotales ">
+               
+
+                  
+                </td>
+            </tr>
+        </table>
+
+
+          <!--Recarga telefónica-->
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td colspan="3" class="detalleCompra">
+                    <h3 class="detalleTitulo">RECARGA TELEFÓNICA</h3>
+                    <p class="detalleSubtitulo">Telcel paquetes amigo <br><br>
+                        <span class="detalleLeyenda ">Estimado cliente en caso de presentarse algún problmea con su compra de tiempo aire, favor de comunicarse al número *264, desde su Telcel</span>
+                    </p>
+                  
+                    <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
+                        <tr class="item">
+                            <td></td>
+                            <td>Recarga Telcel paquetes amigo</td>
+                            <td align="right">$ 20.00</td>
+                        </tr>
+                        <tr class="item">
+                            <td></td>
+                            <td>Autorización Recargas</td>
+                            <td align="right">001452204584843</td>
+                        </tr>
+                        <tr class="item">
+                            <td></td>
+                            <td>Teléfono</td>
+                            <td align="right">5549119676</td>
+                        </tr>
+                        <tr class="detalleTablaItem">
+                            <td class="colMd"></td>
+                        </tr>
+                   
+                        
+                    </table>
+              
+                             <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla mt-md">
+                                  <tr class="itemTotales ">
                             <td colspan="2" align="right">IVA 16%</td>
                             <td align="right">$ 1,586.00</td>
                         </tr>
@@ -651,19 +716,23 @@
                             <td colspan="2" align="right">Propina 10%</td>
                             <td align="right">$ 1,150.00</td>
                         </tr>
-  <tr class="itemTotales ">
+                        <tr class="itemTotales ">
                             <td colspan="2" align="right">Total</td>
-                            <td align="right">$ 14,236</td>
+                            <td align="right">$ 11,770.00</td>
                         </tr>
+                  
+
                     </table>
 
-                  
+        
                 </td>
             </tr>
+            
         </table>
-       <!--Contenido Recibo-->
+        
+    <!--Recarga telefónica-->
 
-      
+     
         <!--Banners de pago-->
         <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
             <tr class="banners">
@@ -733,7 +802,8 @@
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td colspan="3" class="compraText">
-                    <h5 class="text">Tu cancelación ha sido procesada de forma segura.  Por favor conserva este comprobante para cualquier aclaraci&oacute;n.</h5>
+                    <h5 class="text">Tu compra ha sido procesada de forma segura. <br>
+                        Por favor conserva este comprobante para cualquier aclaraci&oacute;n.</h5>
 
                 </td>
             </tr>
@@ -791,7 +861,7 @@
                         <td align="right">217550994</td>
                     </tr>
                     <tr>
-                        <td>NO. AUTORIZACI&Oacute;;N:</td>
+                         <td>NO. AUTORIZACI&Oacute;N:</td>
                         <td align="right">469410</td>
                     </tr>
                     <tr>
