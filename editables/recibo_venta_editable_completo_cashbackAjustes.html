@@ -29,7 +29,7 @@
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
             margin: 0;
-            padding: 0;
+            padding:0;
             line-height: 100%;
         }
         .ExternalClass {
@@ -57,6 +57,7 @@
             background: #fff;
             margin-top: 1rem;
             border-radius: 10px 10px 0 0;
+            padding: 4px;
 
         }
 
@@ -170,7 +171,17 @@
             font-size: 18px;
             color: #0C0C21;
             margin: 0;
+            line-height: 1;
             font-weight: bold;
+        }
+        .afi{
+            font-size: 12px;
+            color: #545463;
+            margin: 0;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+           
+          
         }
 
         .direccion{
@@ -506,7 +517,8 @@
 
         .bannerUnico {
          display: flex;
-         justify-content: center;
+             flex-direction: row;
+    justify-content: center!important;
 
         }
 
@@ -627,6 +639,7 @@
                             </td>
                             <td class="col" style="width: 20px; max-width: 20px;"></td>
                             <td>
+                              <p class="afi">Banco Inbursa</p>
                                 <h4 class="nombreNegocio">DELTA DESARROLLO<br>GR&Aacute;FICO</h4>
                             </td>
                         </tr>
@@ -653,6 +666,7 @@
             <tr>
                 <td align="left" class="badgeContainer">
                     <span class="badgeCorrecto">Aprobada</span>
+                     <span class="badgeCorrecto">Venta Cashback</span>
                     <span class="badgeCorrecto">3 MSI</span>
                 </td>
                 <td align="right">
@@ -833,8 +847,8 @@
 
         
         <!--Banners de pago 1 banners -->
-       <!-- <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
-  <tr class="bannerUnico">
+       <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
+  <tr class="bannerUnico" style="justify-content: center">
     <td>
       <table border="0" cellspacing="0" cellpadding="0" class="bannerItem">
                         <tr>
@@ -869,7 +883,7 @@
                     </table>
                 </td>
             </tr>
-        </table> -->
+        </table>
 
      
         <!--Banners de pago 2 banners-->
