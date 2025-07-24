@@ -290,14 +290,14 @@
         }
 
           .monto {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: bold;
             padding: 10px;
             color: #36b57f;
             margin-right: 6px;
         }
           .montoAdv {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: bold;
             padding: 10px;
               color: #ffab00;
@@ -305,13 +305,13 @@
         }
 
         .montoError {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: bold;
             padding: 10px;
             color: #ff0000;
         }
         .monto-text {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: bold;
             padding: 10px;
             color: #0C0C21;
@@ -621,7 +621,7 @@
 </head>
 
 <body>
-    <table class="containerRecibo" cellpadding="0" cellspacing="0" align="center">
+    <table class="containerRecibo" cellpadding="0" cellspacing="0" align="center" >
         <!--Logo de la empresa y encabezado del recibo-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr class="header">
@@ -662,7 +662,7 @@
 
         </table>
         <!--Badge-->
-        <table class="container p-sm" cellpadding="0" cellspacing="0" align="center" style="padding: 20px 10px 20px 10px;">
+        <table class="container p-sm" cellpadding="0" cellspacing="0" align="center" style="padding-left: 6px; padding-right: 6px;">
             <tr>
                 <td align="left" class="badgeContainer">
                     <span class="badgeCorrecto">Aprobada</span>
@@ -848,7 +848,7 @@
         
         <!--Banners de pago 1 banners -->
        <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
-  <tr class="bannerUnico" style="justify-content: center">
+  <tr class="bannerUnico" style="justify-content: center;margin: auto; width: 50%;">
     <td>
       <table border="0" cellspacing="0" cellpadding="0" class="bannerItem">
                         <tr>
@@ -921,7 +921,7 @@
                             <td width="49%" valign="top" class="bannerSeparador">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bannerItem">
                                     <tr>
-                                        <td class="bannerItemContent">
+                                        <!-- <td class="bannerItemContent">
                                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                 <tr>
                                                     <td width="56" valign="middle">
@@ -938,6 +938,18 @@
                                                     <td valign="middle">
                                                         <p class="tarjeta">AUTORIZADO MEDIANTE</p>
                                                         <p class="titular">CONTACTLESS</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td> -->
+
+                                        <!---------------firma-->
+                                          <td class="bannerItemContent">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="100" valign="middle" style="height: 60px;">
+                                                        <p class="tarjeta">AUTORIZADO MEDIANTE</p>
+                                                        <p class="titular">FIRMA</p>
                                                     </td>
                                                 </tr>
                                             </table>
