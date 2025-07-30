@@ -5,100 +5,75 @@
     <meta charset="UTF-8">
     <title>Recibo de venta completo cashback</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <style>
-        @font-face {
-            font-family: 'Public Sans';
-            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Public Sans';
-            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Bold.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-        }
-
-         body {
+    <style>
+             
+    @font-face {
+        font-family: 'Public Sans';
+        src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Public Sans';
+        src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+    }
+        body {
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
-            font-family: 'Public Sans', sans-serif;
-             width: 100% !important;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-            margin: 0;
-            padding:0;
-            line-height: 100%;
+            background:  [[${bodyBg}]];
+          font-family: 'Public Sans', sans-serif; 
         }
-        .ExternalClass {
-            width: 100%;
-            }
-
-            .ExternalClass,
-            .ExternalClass p,
-            .ExternalClass span,
-            .ExternalClass font,
-            .ExternalClass td,
-            .ExternalClass div {
-            line-height: 100%;
-            }
 
         table {
             border-spacing: 0;
             width: 100%;
         }
 
-
         .containerRecibo {
             max-width: 600px;
             margin: 0 auto;
-            background: #fff;
+            background: [[${bgLoading}]];
             margin-top: 1rem;
             border-radius: 10px 10px 0 0;
-            padding: 4px;
-
         }
 
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: #fff;
-
+            background: [[${blanco}]];
         }
 
         .containerFooter {
             max-width: 600px;
             margin: 0 auto;
-            background: #f4f4f4;
+            background: [[${bgLoading}]];
             padding: 20px;
             border-radius: 0 0 10px 10px;
             font-size: 12px;
-            color: #0C0C21;
-            padding: 2rem 4rem 2rem 4rem;
+            color: [[${textos}]];;
+              padding: 2rem 4rem 2rem 4rem;
         }
-
         .containerTerminos {
+              background: [[${bgLoading}]];
             max-width: 600px;
             margin: 0 auto;
-            padding: 1rem 4rem 4rem 4rem;
+         padding: 1rem 4rem 4rem 4rem;
             padding: 20px;
             font-size: 12px;
-            color: #333;
+            color: [[${textos}]];
         }
 
-
         .header {
-            background-color: #ffffffcc;
+            background-color: [[${bgLoading}]];
             margin-top: 2rem;
             border-radius: 10px 10px 0 0;
-
         }
 
         .header img {
             width: 600px;
-            height: 180px;
+            height: 165px;
             background-size: cover;
             border-radius: 10px 10px 0 0;
         }
@@ -106,37 +81,37 @@
         .button {
             display: inline-block;
             padding: 6px 12px;
-            background: #C8EFDE;
-            color: #36b57f;
+            background: [[${correctoBg}]];
+            color: [[${correcto}]];
             border-radius: 4px;
             font-size: 14px;
         }
 
-
-        .p-md {
-            padding-top: 2rem;
-        padding-bottom: 2rem;
+         .p-md {
+             padding-top: 32px;
+            
         }
 
         .p-sm {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+          padding-top: 10px; 
+           padding-bottom: 12px;
         }
 
         .pt-md {
-            padding-top: 2rem;
+            padding-top: 32px;
+            padding-bottom: 32px;
         }
 
         .mt-md {
-            margin-top: 1rem;
+           margin-top: 16px;
         }
 
         .mb-md {
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .negocio {
-            padding: 20px 20px 0 20px;
+             padding: 20px 20px 0 20px;
             text-align: left;
         }
 
@@ -149,12 +124,11 @@
             vertical-align: middle;
         }
 
-        .logo img {
-          width: 60px;
-             height: 60px;
-         border: 2px solid #545463;
+          .logo img {
+             width: 60px;
+  height: 60px;
+  border: 2px solid [[${marca}]];
   border-radius: 50%;
-            border-radius: 50%;
   object-fit: cover;
         }
 
@@ -169,36 +143,17 @@
 
         .nombreNegocio {
             font-size: 18px;
-            color: #0C0C21;
+            color: [[${textos}]];
             margin: 0;
-            line-height: 1;
             font-weight: bold;
         }
-        .afi{
-            font-size: 12px;
-            color: #545463;
-            margin: 0;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-           
-          
-        }
 
-        .direccion{
-            font-size: 12px;
-            color: #545463;
-            margin: 0;
-            text-align: left;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
-    
         .fechaRecibo {
-            padding: 10px;
+            padding: 10px 10px 0 0;
             font-size: 12px;
             text-align: right;
             margin: 0;
-            color: #545463;
+            color: [[${textos}]];
             margin-right: 6px;
         }
 
@@ -207,6 +162,7 @@
             font-size: 14px;
         }
 
+        
        .badgeCorrecto {
             display: inline-block;
             padding: .3em .7em;
@@ -216,8 +172,8 @@
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: 10px;
-            color: #36b57f;
-            background-color: #C8EFDE;
+            color: [[${correcto}]];
+            background-color: [[${correctoBg}]];
             margin-right: 5px
         }
           .badgeE{
@@ -229,32 +185,29 @@
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: 10px;
-            color: #ff0000;
-            background-color:#ffe6e6;
+            color: [[${error}]];
+            background-color: [[${errorBg}]];
             margin-right: 5px
         }
 
         .destacadoCorrecto {
-            color: #36b57f;
-            background-color: #C8EFDE;
+            color: [[${correcto}]];
+            background-color: [[${correctoBg}]];
             height: 10px;
             font-size: 12px;
-            margin: auto;
         }
 
-        .destacadoAdv {
-            color: #ffab00;
-            background-color: #FFEECC;
+          .destacadoAdv {
+            color: [[${advertencia}]];
+            background-color: [[${advertenciaBg}]];
             height: 10px;
             font-size: 12px;
-                      margin: auto;
         }
           .destacadoError {
-            color: #ff0000;
-            background-color: #ffe6e6;
+            color: [[${error}]];
+            background-color: [[${errorBg}]];
             height: 10px;
             font-size: 12px;
-                      margin: auto;
         }
 
         .badgeError {
@@ -266,10 +219,10 @@
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: 10px;
-            color: #ff0000;
-            background-color: #ffe6e6;
+            color: [[${error}]];
+            background-color: [[${errorBg}]];
         }
-             .badgeAdvertencia {
+   .badgeAdvertencia {
             display: inline-block;
             padding: .3em .7em;
             font-size: 12px;
@@ -278,63 +231,68 @@
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: 10px;
-         color: #ffab00;
-            background-color: #FFEECC;
+         color: [[${advertencia}]];
+            background-color: [[${advertenciaBg}]];
         }
 
         .total {
             font-size: 24px;
             font-weight: bold;
             padding: 10px;
-            color: #0C0C21;
+            color: [[${textos}]];
         }
 
-          .monto {
-            font-size: 30px;
+    
+
+  .monto {
+            font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: #36b57f;
+            color: [[${correcto}]];
             margin-right: 6px;
         }
-          .montoAdv {
-            font-size: 30px;
+
+         .montoAdv {
+            font-size: 32px;
             font-weight: bold;
             padding: 10px;
-              color: #ffab00;
+              color:[[${advertencia}]];
       
         }
-
         .montoError {
-            font-size: 30px;
+            font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: #ff0000;
+            color: [[${error}]];
         }
         .monto-text {
-            font-size: 30px;
+            font-size: 32px;
             font-weight: bold;
             padding: 10px;
-            color: #0C0C21;
+            color: [[${textos}]];
         }
+
+
+
+
 
         .textDestacado {
             font-size: 14px;
             margin: 0;
             padding: 10px;
             font-weight: 500;
-            text-align: center;
         }
 
         .separador {
-            border-top: 1px dotted #545463;
+            border-top: 1px dotted [[${neutral}]];
             line-height: 1px;
             height: 1px;
         }
 
-        
+                
 .separador-boleto {
   position: relative;
-  background-color: #ffffff;
+  background-color:[[${blanco}]];
   width: 100%;
   height: 30px;
   background-image: radial-gradient(circle at center, #999 1px, transparent 1px);
@@ -349,7 +307,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #f4f4f4;
+  background-color:[[${bodyBg}]];
   top: 50%;
   transform: translateY(-50%);
 }
@@ -362,29 +320,26 @@
   right: -10px;
 }
 
-         .detalleCompra {
-           padding: 8px 28px 40px 28px;
+        .detalleCompra {
+             padding: 8px 28px 40px 28px;
             font-size: 14px;
-            color: #333;
+            color: [[${textos}]];
         }
 
-        .detalleMotivo {
-             padding: 8px 28px 0px 28px;
-            font-size: 14px;
-            color: #333;
-        }
         .detalleTitulo {
             font-size: 14px;
-            color: #0C0C21;
+            color: [[${textos}]];
             margin-bottom: 20px;
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 0.25em;
         }
 
-            .detalleSubtitulo {
+       
+
+    .detalleSubtitulo {
             font-size: 12px;
-            color: #545463;
+            color: [[${neutral}]];
             margin-top: -8px;
             margin-bottom: 20px;
             padding-top: 2px;
@@ -395,10 +350,12 @@
       .detalleLeyenda {
             font-size: 10px;
             line-height: 1.6;
-            color: #c1c1c1;
+            color: [[${skeletonLoad}]];
             margin: 0 auto;
             text-align: center;
         }
+
+
 
         .detalleTabla {
             width: 100%;
@@ -407,7 +364,7 @@
         }
 
         .detalleTablaItem {
-            border-bottom: 1px solid #c1c1c1;
+            border-bottom: 1px solid [[${skeletonLoad}]];
             padding: 20px;
         }
 
@@ -424,13 +381,14 @@
         }
 
         .bannerItem {
-            background-color: #E9EBF8;
+            background-color: [[${bannerItem}]];
             border-radius: 10px;
-
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .bannerItemContent {
             padding: 10px;
+            
         }
 
         .bannerImg {
@@ -438,30 +396,24 @@
             height: 60px;
             border-radius: 8px;
         }
-
-             .bannerImgFirma {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-        }
-
-        .bannerImg img {
+         .bannerImg img {
             width: 60px;
             height: auto;
             border-radius: 8px;
         }
 
         .tarjeta {
-            font-size: 12px;
-            color: #333333;
+            font-size: 14px;
+            color: [[${textos}]];;
             font-weight: bold;
+
             margin: 0;
             text-transform: uppercase;
         }
 
         .titular {
             font-size: 12px;
-            color: #545463;
+            color: {{neutral}};
             padding-top: 4px;
             margin: 0;
             text-transform: uppercase;
@@ -476,28 +428,31 @@
         .text {
             margin: 0;
             font-size: 12px;
-            color: #0C0C21;
+            color: [[${textos}]];;
             line-height: 1.6;
             font-weight: 100;
         }
 
         .procesadorFondo {
-            background-image: url('/img/fondoProcesador.png');
-            background-color: #233A87;
+            background-image:[[${fondoProcesador}]];
+            background-color: [[${marca}]];
             border-radius: 0 0 10px 10px;
             letter-spacing: 0.25em;
         }
-     .fondoProcesador {
-             background-image:url('/img/fondoProcesador.png');
-            background-color: #233A87;
+
+             .fondoProcesador {
+             background-image:[[${fondoProcesador}]];
+            background-color: [[${marca}]];
             border-radius: 0 0 10px 10px;
          padding: 10px;
         }
 
+        
+
         .textProcesador {
             margin: 0;
             font-size: 12px;
-            color: #ffffff;
+            color: [[${blanco}]];
             line-height: 1.6;
             font-weight: 100;
             text-transform: uppercase;
@@ -505,33 +460,23 @@
 
         .logoProcesador {
             padding-right: 1rem;
-            width: 150px;
+              width: 100px;
         }
 
-        .logoProcesador img {
+          .logoProcesador img {
             width: 100px;
             height: auto;
         }
-
-
-
         .textTerminos {
             font-size: 10px;
             line-height: 1.4;
             text-align: justify;
         }
+  
+ 
 
-        .bannerUnico {
-         display: flex;
-             flex-direction: row;
-    justify-content: center!important;
-
-        }
-
-     
-
-        @media only screen and (max-width: 560px) {
-            .logo img {
+          @media only screen and (max-width: 560px) {
+            .logo img{
                 width: 40px;
                 height: auto;
             }
@@ -608,12 +553,12 @@
                 padding: 20px;
             }
 
-            .logoProcesador img {
+            .logoProcesador img{
                 width: 100px;
                 height: auto;
             }
         }
-
+        
         @media only screen and (max-width: 620px) {
             .container {
                 width: 90% !important;
@@ -627,7 +572,7 @@
 </head>
 
 <body>
-    <table class="containerRecibo" cellpadding="0" cellspacing="0" align="center" >
+    <table class="containerRecibo" cellpadding="0" cellspacing="0" align="center">
         <!--Logo de la empresa y encabezado del recibo-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr class="header">
@@ -643,39 +588,30 @@
                             <td class="logo">
                                 <img src="/img/fotoPerfil@4x-100.jpg" alt="Logo">
                             </td>
-                            <td class="col" style="width: 20px; max-width: 20px;"></td>
+                            <td class="col"></td>
                             <td>
-                              <p class="afi">Banco Inbursa</p>
                                 <h4 class="nombreNegocio">DELTA DESARROLLO<br>GR&Aacute;FICO</h4>
                             </td>
                         </tr>
-                       
                     </table>
-                </td>
-                
-            </tr>
- <tr>
-                <td colspan="3" align="left" class="direccion" style="padding: 0 30px 0 30px;">
-                    <p>Shakespeare 21 Anzures Miguel Hidalgo, CDMX 11590.</p>
                 </td>
             </tr>
 
             <tr>
-                <td colspan="3" align="right" class="fechaRecibo" style="padding: 0 30px 0 30px;">
+                <td colspan="3" align="right" class="fechaRecibo">
                     <p>25 septiembre de 2025 &nbsp; 14:52:59</p>
                 </td>
             </tr>
 
         </table>
         <!--Badge-->
-        <table class="container p-sm" cellpadding="0" cellspacing="0" align="center" style="padding-left: 6px; padding-right: 6px;">
+        <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
             <tr>
-                <td align="left" class="badgeContainer" style="padding: 20px 10px;">
+                <td align="left" class="badgeContainer">
                     <span class="badgeCorrecto">Aprobada</span>
-                     <span class="badgeCorrecto">Venta Cashback</span>
                     <span class="badgeCorrecto">3 MSI</span>
                 </td>
-                <td align="right" align="center" style="padding: 20px 10px;">
+                <td align="right">
                     <span class="total">Total</span>
                     <span class="monto">$ 11,770.00</span>
                 </td>
@@ -683,17 +619,14 @@
         </table>
   
 
-<!--Destacado-->
-<table class="container p-md" cellpadding="0" cellspacing="0" align="center" >
-    <tr class="destacadoCorrecto">
-        <td style="text-align: center;">
-            <div style="display: inline-flex; align-items: center; gap: 8px; padding: 8px;">
-                <img src="https://serti-static.s3.us-east-1.amazonaws.com/Codice-Serti/img/iconos/venta.svg" alt="" width="20" style="vertical-align: middle;">
-                <span class="textDestacado" style="margin: 0; padding: 0;">Venta a 3 Meses Sin Intereses de $4,217.00</span>
-            </div>
-        </td>
-    </tr>
-</table>
+        <!--Destacado-->
+        <table class="container p-md" cellpadding="0" cellspacing="0" align="center">
+            <tr align="center" class="destacadoCorrecto">
+                <td>
+                    <p class="textDestacado">Venta a 3 Meses Sin Intereses de $4,217.00</p>
+                </td>
+            </tr>
+        </table>
 
         <!--Separador-->
    <table class="container" cellpadding="0" cellspacing="0" align="center">
@@ -710,7 +643,7 @@
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td colspan="3" class="detalleCompra">
-                    <h3 class="detalleTitulo"style="text-align: center;">DETALLE DE LA COMPRA</h3>
+                    <h3 class="detalleTitulo">DETALLE DE LA COMPRA</h3>
                     <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
                         <tr class="item">
                             <td>01</td>
@@ -744,7 +677,6 @@
                     <p class="detalleSubtitulo">Telcel paquetes amigo <br><br>
                         <span class="detalleLeyenda ">Estimado cliente en caso de presentarse algún problmea con su compra de tiempo aire, favor de comunicarse al número *264, desde su Telcel</span>
                     </p>
-                  
                     <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
                         <tr class="item">
                             <td></td>
@@ -764,15 +696,11 @@
                         <tr class="detalleTablaItem">
                             <td class="colMd"></td>
                         </tr>
-                   
-                        
+
                     </table>
               
-                   
-        
                 </td>
             </tr>
-            
         </table>
     <!--Recarga telefónica-->
      
@@ -780,8 +708,8 @@
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td colspan="3" class="detalleCompra">
-                    <h3 class="detalleTitulo"style="text-align: center;">RETIRO EN EFECTIVO</h3>
-                    <p class="detalleSubtitulo"style="text-align: center;">Cashback</p>
+                    <h3 class="detalleTitulo">RETIRO EN EFECTIVO</h3>
+                    <p class="detalleSubtitulo">Cashback</p>
                     <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
                         <tr class="item">
                             <td></td>
@@ -811,8 +739,8 @@
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td colspan="3" class="detalleCompra">
-                    <h3 class="detalleTitulo" style="text-align: center;">PAGO DE SERVICIOS</h3>
-                    <p class="detalleSubtitulo"style="text-align: center;">Telmex</p>
+                    <h3 class="detalleTitulo">PAGO DE SERVICIOS</h3>
+                    <p class="detalleSubtitulo">Telmex</p>
                     <table width="100%" cellpadding="5" cellspacing="0" class="detalleTabla">
                         <tr class="item">
                             <td></td>
@@ -850,49 +778,8 @@
             </tr>
         </table>
     <!--Pago de servicio-->
-
-        
-        <!--Banners de pago 1 banners -->
-       <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
-  <tr class="bannerUnico" style="justify-content: center; margin: auto; width: 50%; left: 40px; right: 40px;">
-    <td>
-      <table border="0" cellspacing="0" cellpadding="0" class="bannerItem">
-                        <tr>
-                            <td width="100%" valign="top" class="bannerSeparador" >
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bannerItem">
-                                    <tr>
-                                        <td class="bannerItemContent">
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                <tr>
-                                                    <td width="56" valign="middle">
-                                                        <table border="0" cellspacing="0" cellpadding="0">
-                                                            <tr>
-                                                                <td align="center" class="bannerImg">
-                                                                    <img src="/img/Visa.png" width="60" alt="Tarjeta">
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td width="15"></td>
-                                                    <td valign="middle">
-                                                        <p class="tarjeta">CR&Eacute;DITO **** 1235</p>
-                                                        <p class="titular">ARIEL MILL&Aacute;N</p>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-
      
-        <!--Banners de pago 2 banners-->
+        <!--Banners de pago-->
         <table class="container p-sm" cellpadding="0" cellspacing="0" align="center">
             <tr class="banners">
                 <td>
@@ -927,7 +814,7 @@
                             <td width="49%" valign="top" class="bannerSeparador">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bannerItem">
                                     <tr>
-                                         <!-- <td class="bannerItemContent">
+                                        <td class="bannerItemContent">
                                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                 <tr>
                                                     <td width="56" valign="middle">
@@ -947,62 +834,7 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </td> -->
-                                        <td class="bannerItemContent">
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                <tr>
-                                                    <td width="56" valign="middle">
-                                                        <table border="0" cellspacing="0" cellpadding="0">
-                                                            <tr>
-                                                                <td align="center" class="bannerImg">
-                                                                    <img src="/img/firma.png" width="60"
-                                                                        alt="Metodo de autorizacion" > <!--display: block (PARA MOSTRARLA) // SI NO FUNCIONA USAR  / opacity: 0; Y opacity: 1 (PARA MOSTRARLA)-->
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td width="15" style="height: 60px;"></td>
-                                                    <td valign="middle">
-                                                        <p class="tarjeta">AUTORIZADO MEDIANTE</p>
-                                                        <p class="titular">FIRMA</p>
-                                                    </td>
-                                                </tr>
-                                            </table>
                                         </td>
-
-                                              <!-- <td class="bannerItemContent">
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                <tr>
-                                                    <td width="56" valign="middle">
-                                                        <table border="0" cellspacing="0" cellpadding="0">
-                                                            <tr>
-                                                                <td align="center" class="bannerImg">
-                                                                    <img src="/img/firma.png" width="60"
-                                                                        alt="Metodo de autorizacion">
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td width="15"></td>
-                                                    <td valign="middle">
-                                                        <p class="tarjeta">AUTORIZADO MEDIANTE</p>
-                                                        <p class="titular">FIRMA</p>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td> -->
-
-                                        <!---------------firma-->
-                                          <!-- <td class="bannerItemContent">
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                <tr>
-                                                    <td width="100" valign="middle" style="height: 60px;">
-                                                        <p class="tarjeta">AUTORIZADO MEDIANTE</p>
-                                                        <p class="titular">FIRMA</p>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td> -->
                                     </tr>
                                 </table>
                             </td>
@@ -1011,22 +843,11 @@
                 </td>
             </tr>
         </table>
-        
-        <!--Firma cliente--->
-        <table class="container" cellpadding="0" cellspacing="0" align="center">
-            <tr>
-                   <td align="center" class="bannerImgFirma">
-                                                                    <img src="/img/firmaEjemplo.png" width="160"   style="padding-top: 10px;"
-                                                                        alt="Firma de cliente" > 
-                                                                </td>
-            </tr>
-        </table>
-
 
         <!--Compra Procesada-->
         <table class="container" cellpadding="0" cellspacing="0" align="center">
             <tr>
-                <td colspan="3" class="compraText" style="text-align: center;">
+                <td colspan="3" class="compraText">
                     <h5 class="text">Tu compra ha sido procesada de forma segura. <br>
                         Por favor conserva este comprobante para cualquier aclaraci&oacute;n.</h5>
 
