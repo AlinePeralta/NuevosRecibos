@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperación de contraseña</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face {
+            font-family: 'Public Sans';
+            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Public Sans';
+            src: url('https://serti-static.s3.amazonaws.com/Recibos/fonts/PublicSans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            font-family: 'Public Sans', sans-serif;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            line-height: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+
+        table {
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .containerRecibo {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            margin-top: 1rem;
+            border-radius: 10px 10px 0 0;
+            padding: 4px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .containerFooter {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 0 0 10px 10px;
+            font-size: 12px;
+            color: #0C0C21;
+            padding: 2rem 4rem 2rem 4rem;
+        }
+
+        .containerTerminos {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem 4rem 4rem 4rem;
+            padding: 20px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .header {
+            background-color: #ffffffcc;
+            margin-top: 2rem;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header img {
+            width: 600px;
+            height: 180px;
+            background-size: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #C8EFDE;
+            color: #36b57f;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .p-md {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .p-sm {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .pt-md {
+            padding-top: 2rem;
+        }
+
+        .mt-md {
+            margin-top: 1rem;
+        }
+
+        .mb-md {
+            margin-bottom: 1rem;
+        }
+
+        .negocio {
+            padding: 20px 20px 0 20px;
+            text-align: left;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+            overflow: hidden;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #545463;
+            border-radius: 50%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .col {
+            width: 20px;
+        }
+
+        .colMd {
+            width: 40px;
+            height: 20px;
+        }
+
+        .nombreNegocio {
+            font-size: 18px;
+            color: #0C0C21;
+            margin: 0;
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        .afi {
+            font-size: 12px;
+            color: #545463;
+            margin: 0;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .direccion {
+            font-size: 12px;
+            color: #545463;
+            margin: 0;
+            text-align: left;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .fechaRecibo {
+            padding: 10px;
+            font-size: 12px;
+            text-align: right;
+            margin: 0;
+            color: #545463;
+            margin-right: 6px;
+        }
+
+        .badgeContainer {
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .badgeCorrecto {
+            display: inline-block;
+            padding: .3em .7em;
+            font-size: 12px;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 10px;
+            color: #36b57f;
+            background-color: #C8EFDE;
+            margin-right: 5px
+        }
+
+        .badgeE {
+            display: inline-block;
+            padding: .3em .7em;
+            font-size: 12px;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 10px;
+            color: #ff0000;
+            background-color: #ffe6e6;
+            margin-right: 5px
+        }
+
+        .destacadoCorrecto {
+            color: #36b57f;
+            background-color: #C8EFDE;
+            height: 10px;
+            font-size: 12px;
+            margin: auto;
+        }
+
+        .destacadoAdv {
+            color: #ffab00;
+            background-color: #FFEECC;
+            height: 10px;
+            font-size: 12px;
+            margin: auto;
+        }
+
+        .destacadoError {
+            color: #ff0000;
+            background-color: #ffe6e6;
+            height: 10px;
+            font-size: 12px;
+            margin: auto;
+        }
+
+        .badgeError {
+            display: inline-block;
+            padding: .3em .7em;
+            font-size: 12px;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 10px;
+            color: #ff0000;
+            background-color: #ffe6e6;
+        }
+
+        .badgeAdvertencia {
+            display: inline-block;
+            padding: .3em .7em;
+            font-size: 12px;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 10px;
+            color: #ffab00;
+            background-color: #FFEECC;
+        }
+
+        .total {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            color: #0C0C21;
+        }
+
+        .monto {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 10px;
+            color: #36b57f;
+            margin-right: 6px;
+        }
+
+        .montoAdv {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 10px;
+            color: #ffab00;
+
+        }
+
+        .montoError {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 10px;
+            color: #ff0000;
+        }
+
+        .monto-text {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 10px;
+            color: #0C0C21;
+        }
+
+        .textDestacado {
+            font-size: 14px;
+            margin: 0;
+            padding: 10px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .separador {
+            border-top: 1px dotted #545463;
+            line-height: 1px;
+            height: 1px;
+        }
+
+
+        .separador-boleto {
+            position: relative;
+            background-color: #ffffff;
+            width: 100%;
+            height: 30px;
+            background-image: radial-gradient(circle at center, #999 1px, transparent 1px);
+            background-size: 6px 100%;
+            background-position: 0 center;
+        }
+
+        .separador-boleto::before,
+        .separador-boleto::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #f4f4f4;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .separador-boleto::before {
+            left: -10px;
+        }
+
+        .separador-boleto::after {
+            right: -10px;
+        }
+
+        .detalleCompra {
+            padding: 8px 28px 40px 28px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .detalleMotivo {
+            padding: 8px 28px 0px 28px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .detalleTitulo {
+            font-size: 14px;
+            color: #0C0C21;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 0.25em;
+        }
+
+        .detalleSubtitulo {
+            font-size: 12px;
+            color: #545463;
+            margin-top: -8px;
+            margin-bottom: 20px;
+            padding-top: 2px;
+            padding-left: 40px;
+            padding-right: 40px;
+            text-align: center;
+        }
+
+        .detalleLeyenda {
+            font-size: 10px;
+            line-height: 1.6;
+            color: #c1c1c1;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .detalleTabla {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .detalleTablaItem {
+            border-bottom: 1px solid #c1c1c1;
+            padding: 20px;
+        }
+
+        .itemTotales {
+            font-weight: bold;
+        }
+
+        .banners {
+            padding: 4rem;
+        }
+
+        .bannerSeparador {
+            padding: 0 1rem;
+        }
+
+        .bannerItem {
+            background-color: #E9EBF8;
+            border-radius: 10px;
+
+        }
+
+        .bannerItemContent {
+            padding: 10px;
+        }
+
+        .bannerImg {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        .bannerImgFirma {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        .bannerImg img {
+            width: 60px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .tarjeta {
+            font-size: 12px;
+            color: #333333;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .titular {
+            font-size: 12px;
+            color: #545463;
+            padding-top: 4px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .compraText {
+            padding: 30px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .text {
+            margin: 0;
+            font-size: 12px;
+            color: #0C0C21;
+            line-height: 1.6;
+            font-weight: 100;
+        }
+
+        .procesadorFondo {
+            background-image: url('/img/fondoProcesador.png');
+            background-color: #233A87;
+            border-radius: 0 0 10px 10px;
+            letter-spacing: 0.25em;
+        }
+
+        .fondoProcesador {
+            background-image: url('/img/fondoProcesador.png');
+            background-color: #233A87;
+            border-radius: 0 0 10px 10px;
+            padding: 10px;
+        }
+
+        .textProcesador {
+            margin: 0;
+            font-size: 12px;
+            color: #ffffff;
+            line-height: 1.6;
+            font-weight: 100;
+            text-transform: uppercase;
+        }
+
+        .logoProcesador {
+            padding-right: 1rem;
+            width: 150px;
+        }
+
+        .logoProcesador img {
+            width: 100px;
+            height: auto;
+        }
+
+
+
+        .textTerminos {
+            font-size: 10px;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        .bannerUnico {
+            display: flex;
+            flex-direction: row;
+            justify-content: center !important;
+
+        }
+
+
+
+        @media only screen and (max-width: 560px) {
+            .logo img {
+                width: 40px;
+                height: auto;
+            }
+
+            .header img {
+                width: 100%;
+                height: auto;
+            }
+
+            .nombreNegocio {
+                font-size: 12px;
+
+            }
+
+            .fechaRecibo {
+                font-size: 10px;
+            }
+
+            .total {
+                font-size: 16px;
+            }
+
+            .monto {
+                font-size: 20px;
+            }
+
+            .badgeContainer {
+                font-size: 12px;
+                gap: 4px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .textDestacado {
+                font-size: 12px;
+            }
+
+            .detalleCompra {
+                padding: 20px;
+                font-size: 10px;
+            }
+
+            .detalleTitulo {
+                font-size: 12px;
+                letter-spacing: 0.15em;
+            }
+
+            .detalleTabla {
+                font-size: 12px;
+            }
+
+            .tarjeta {
+                font-size: 10px;
+            }
+
+            .titular {
+                font-size: 10px;
+            }
+
+            .text {
+                font-size: 10px;
+            }
+
+            .textProcesador {
+                font-size: 8px;
+            }
+
+            .textTerminos {
+                font-size: 8px;
+            }
+
+            .containerFooter {
+                font-size: 8px;
+                padding: 20px;
+            }
+
+            .logoProcesador img {
+                width: 100px;
+                height: auto;
+            }
+        }
+
+        @media only screen and (max-width: 620px) {
+            .container {
+                width: 90% !important;
+            }
+
+            .total {
+                font-size: 20px !important;
+            }
+        }
+
+        .textCorreos {
+            line-height: 1.6;
+            width: 96%;
+             font-size: 16px;
+        }
+        .textCorreos-sm {
+            line-height: 1.6;
+            font-size: 13px;
+            padding-bottom: 10px;
+        }
+
+        .tituloCorreos {
+            padding: 40px 20px 0 20px;
+            text-align: left;
+        }
+
+        .botonPrincipal {
+            background-color: #102694;
+            /*[[${marca}]];**/
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 16px 50px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+            margin: auto;
+           cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .textHelp {
+           font-size: 10px; 
+           color: #000000; 
+           font-weight: bold; 
+           margin: 0; 
+           line-height: 1.4;
+           padding-left: 20px;
+        }
+        .helpContainer {
+            background-color: #E9EBF8;
+            /*[[${bannerItem}]];**/
+            padding: 20px;
+            text-align: left;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <table class="containerRecibo" cellpadding="0" cellspacing="0" align="center">
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr class="header">
+                <td colspan="3">
+                    <img src="/img/portadaDelta@4x-100.jpg" alt="Portada">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="left" class="tituloCorreos">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td class="col" style="width: 20px; max-width: 20px; "></td>
+                            <td>
+                                <h4 class="nombreNegocio">RESTABLECE TU CONTRASEÑA</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="left" class="negocio">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tr>
+                            <td class="col" style="width: 20px; max-width: 20px;"></td>
+                            <td>
+                                <p class="textCorreos">
+                                    ¡Hola!<br><br>
+                                    Recibimos una solicitud para restablecer la contraseña de tu cuenta “@MARCA”.<br><br>
+                                    Para crear una nueva contraseña, haz clic en el siguiente botón:
+                                </p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" align="center" style="padding: 30px 0;">
+                                <table border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td align="center" style="border-radius: 6px;">
+                                            <a href="#" target="_blank" class="botonPrincipal">
+                                                Restablecer contraseña
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="col" style="width: 20px; max-width: 20px;"></td>
+                            <td>
+                                <p class="textCorreos-sm">
+                                    Si tú no solicitaste este cambio, puedes ignorar este correo de forma segura. <br> Tu contraseña actual no será modificada.
+                                </p>
+                            </td>
+                        </tr>
+
+                    
+                        </table>
+                </td>
+            </tr>
+        </table>
+
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td class="helpContainer">
+                     <p class="textHelp">
+                        ¿Necesitas ayuda? Comunícate con nuestro equipo, será un placer atenderte.<br>
+                        Horario de atención: Lunes a viernes de 9:00 a 19:00
+                     </p>
+                </td>
+            </tr>
+        </table>
+        <table class="container" cellpadding="0" cellspacing="0" align="center">
+            <tr class="banners">
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="49%" valign="top" class="">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="procesadorFondo">
+                                    <tr>
+                                        <td class="bannerItemContent">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+
+                                                    <td width="15"></td>
+                                                    <td valign="middle">
+
+                                                    </td>
+                                                    <td valign="middle" align="right">
+                                                        <img src="/img/logomarca.png" alt="" class="logoProcesador">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </table>
+
+
+</body>
+
+</html>
